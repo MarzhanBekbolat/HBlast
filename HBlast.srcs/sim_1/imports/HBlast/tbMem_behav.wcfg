@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tbTop_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tbTop" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="53456910000fs"></ZoomStartTime>
+      <ZoomEndTime time="53701410001fs"></ZoomEndTime>
+      <Cursor1Time time="53627410000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="162"></NameColumnWidth>
+      <ValueColumnWidth column_width="150"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="50" />
+   <wvobject type="divider" fp_name="divider86">
+      <obj_property name="label">DDR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/sys_clk_p" type="logic">
+      <obj_property name="ElementShortName">sys_clk_p</obj_property>
+      <obj_property name="ObjectShortName">sys_clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/sys_clk_n" type="logic">
+      <obj_property name="ElementShortName">sys_clk_n</obj_property>
+      <obj_property name="ObjectShortName">sys_clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/clk_ref_i" type="logic">
+      <obj_property name="ElementShortName">clk_ref_i</obj_property>
+      <obj_property name="ObjectShortName">clk_ref_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_addr" type="array">
+      <obj_property name="ElementShortName">app_addr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">app_addr[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_cmd" type="array">
+      <obj_property name="ElementShortName">app_cmd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">app_cmd[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_en" type="logic">
+      <obj_property name="ElementShortName">app_en</obj_property>
+      <obj_property name="ObjectShortName">app_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_wdf_data" type="array">
+      <obj_property name="ElementShortName">app_wdf_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">app_wdf_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_wdf_end" type="logic">
+      <obj_property name="ElementShortName">app_wdf_end</obj_property>
+      <obj_property name="ObjectShortName">app_wdf_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_wdf_wren" type="logic">
+      <obj_property name="ElementShortName">app_wdf_wren</obj_property>
+      <obj_property name="ObjectShortName">app_wdf_wren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_wdf_mask" type="array">
+      <obj_property name="ElementShortName">app_wdf_mask[7:0]</obj_property>
+      <obj_property name="ObjectShortName">app_wdf_mask[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_rd_data" type="array">
+      <obj_property name="ElementShortName">app_rd_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">app_rd_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_rd_data_end" type="logic">
+      <obj_property name="ElementShortName">app_rd_data_end</obj_property>
+      <obj_property name="ObjectShortName">app_rd_data_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_rd_data_valid" type="logic">
+      <obj_property name="ElementShortName">app_rd_data_valid</obj_property>
+      <obj_property name="ObjectShortName">app_rd_data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_rdy" type="logic">
+      <obj_property name="ElementShortName">app_rdy</obj_property>
+      <obj_property name="ObjectShortName">app_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_wdf_rdy" type="logic">
+      <obj_property name="ElementShortName">app_wdf_rdy</obj_property>
+      <obj_property name="ObjectShortName">app_wdf_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_sr_req" type="logic">
+      <obj_property name="ElementShortName">app_sr_req</obj_property>
+      <obj_property name="ObjectShortName">app_sr_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_ref_req" type="logic">
+      <obj_property name="ElementShortName">app_ref_req</obj_property>
+      <obj_property name="ObjectShortName">app_ref_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_zq_req" type="logic">
+      <obj_property name="ElementShortName">app_zq_req</obj_property>
+      <obj_property name="ObjectShortName">app_zq_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_sr_active" type="logic">
+      <obj_property name="ElementShortName">app_sr_active</obj_property>
+      <obj_property name="ObjectShortName">app_sr_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_ref_ack" type="logic">
+      <obj_property name="ElementShortName">app_ref_ack</obj_property>
+      <obj_property name="ObjectShortName">app_ref_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/app_zq_ack" type="logic">
+      <obj_property name="ElementShortName">app_zq_ack</obj_property>
+      <obj_property name="ObjectShortName">app_zq_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/ui_clk" type="logic">
+      <obj_property name="ElementShortName">ui_clk</obj_property>
+      <obj_property name="ObjectShortName">ui_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/ui_clk_sync_rst" type="logic">
+      <obj_property name="ElementShortName">ui_clk_sync_rst</obj_property>
+      <obj_property name="ObjectShortName">ui_clk_sync_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/u_mig_7series_0/init_calib_complete" type="logic">
+      <obj_property name="ElementShortName">init_calib_complete</obj_property>
+      <obj_property name="ObjectShortName">init_calib_complete</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider111">
+      <obj_property name="label">brdige</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_wr" type="logic">
+      <obj_property name="ElementShortName">i_wr</obj_property>
+      <obj_property name="ObjectShortName">i_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_wr_done" type="logic">
+      <obj_property name="ElementShortName">o_wr_done</obj_property>
+      <obj_property name="ObjectShortName">o_wr_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_wr_data" type="array">
+      <obj_property name="ElementShortName">i_wr_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wr_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_app_en" type="logic">
+      <obj_property name="ElementShortName">o_ddr_app_en</obj_property>
+      <obj_property name="ObjectShortName">o_ddr_app_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_addr" type="array">
+      <obj_property name="ElementShortName">o_ddr_addr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">o_ddr_addr[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_app_rdy" type="logic">
+      <obj_property name="ElementShortName">i_ddr_app_rdy</obj_property>
+      <obj_property name="ObjectShortName">i_ddr_app_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_cmd" type="array">
+      <obj_property name="ElementShortName">o_ddr_cmd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">o_ddr_cmd[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_wr_en" type="logic">
+      <obj_property name="ElementShortName">o_ddr_wr_en</obj_property>
+      <obj_property name="ObjectShortName">o_ddr_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_wr_data" type="array">
+      <obj_property name="ElementShortName">o_ddr_wr_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">o_ddr_wr_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_wr_rdy" type="logic">
+      <obj_property name="ElementShortName">i_ddr_wr_rdy</obj_property>
+      <obj_property name="ObjectShortName">i_ddr_wr_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_rd" type="logic">
+      <obj_property name="ElementShortName">i_rd</obj_property>
+      <obj_property name="ObjectShortName">i_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_ack" type="logic">
+      <obj_property name="ElementShortName">o_rd_ack</obj_property>
+      <obj_property name="ObjectShortName">o_rd_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_rd_addr" type="array">
+      <obj_property name="ElementShortName">i_rd_addr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">i_rd_addr[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_data" type="array">
+      <obj_property name="ElementShortName">o_rd_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rd_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_valid" type="logic">
+      <obj_property name="ElementShortName">o_rd_valid</obj_property>
+      <obj_property name="ObjectShortName">o_rd_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_rd_data" type="array">
+      <obj_property name="ElementShortName">i_ddr_rd_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">i_ddr_rd_data[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_rd_data_valid" type="logic">
+      <obj_property name="ElementShortName">i_ddr_rd_data_valid</obj_property>
+      <obj_property name="ObjectShortName">i_ddr_rd_data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/ddr_wr_addr" type="array">
+      <obj_property name="ElementShortName">ddr_wr_addr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">ddr_wr_addr[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/WAIT_WR" type="array">
+      <obj_property name="ElementShortName">WAIT_WR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WAIT_WR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbTop/hbtop/bridge/WAIT_RD" type="array">
+      <obj_property name="ElementShortName">WAIT_RD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WAIT_RD[31:0]</obj_property>
+   </wvobject>
+</wave_config>
