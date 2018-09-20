@@ -49,8 +49,6 @@ begin
 	end
 	case(state)
 		IDLE:begin
-			o_wr_done <= 1'b0;
-			o_rd_ack <= 1'b0;
 			if(i_wr)
 			begin
 				o_ddr_app_en <= 1'b1;
@@ -64,6 +62,7 @@ begin
 				o_ddr_cmd <= 2'b001;
 				o_ddr_addr <= i_rd_addr;
 				rdCount <= 0;
+				o_rd_ack <= 1'b1;
 				state <= WAIT_RD;
 			end
 		end
@@ -78,6 +77,7 @@ begin
 			end
 		end
 		WAIT_WR:begin
+			o_wr_done <= 1'b0;
 			if(i_ddr_wr_rdy)
 			begin
 				o_ddr_wr_en <= 1'b0;
@@ -86,6 +86,7 @@ begin
 			end
 		end
 		WAIT_RD:begin
+			o_rd_ack <= 1'b0;
 			if(i_ddr_app_rdy)
 			begin
 				rdCount <= rdCount + 1;
@@ -93,7 +94,6 @@ begin
 				if(rdCount == 7)
 				begin
 					o_ddr_app_en <= 1'b0;
-					o_rd_ack <= 1'b1;
 					state <= IDLE;
 				end
 			end

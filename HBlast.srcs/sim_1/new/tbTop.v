@@ -93,6 +93,8 @@
 
 `timescale 1ps/100fs
 
+`define DDRTestData 0
+
 module tbTop;
 
 
@@ -562,6 +564,7 @@ initial
 begin
     wr_ddr = 0;
 	rd_ddr = 0;
+	wr_data = `DDRTestData;
 	wait(init_calib_complete);
 	$display("DDR link-up");
 	#50000;
@@ -569,60 +572,52 @@ begin
 	@(posedge ddr_user_clk);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b1;
-	wr_data <= 'ha5a5a5a5a5a5a5a5;
+	wr_data <= wr_data+1;
 	wait(wr_ack);
 	@(posedge ddr_user_clk);
 	wr_ddr <= 1'b0;
-	#10000;
 	@(posedge ddr_user_clk);
 	rd_ddr <= 1'b1;
 	ddr_rd_addr <= 'h0;
@@ -631,17 +626,27 @@ begin
 	rd_ddr <= 1'b0;
 end
 
+reg [63:0] expectedData;
+
+initial
+begin
+	expectedData = `DDRTestData;
+end
+
 always@(posedge ddr_user_clk)
 begin
 	if(ddr_rd_data_valid)
 	begin
 		$display("received data from ddr %0x",ddr_rd_data);
-		if(ddr_rd_data == 'ha5a5a5a5a5a5a5a5)
+		if(ddr_rd_data == expectedData)
+		begin
 			$display("Test passed");
+		end
 		else
 		begin
-			$display("Data mismatch, expected %0x, received %0x",'ha5a5a5a5a5a5a5a5,ddr_rd_data);
+			$display("Data mismatch, expected %0x, received %0x",expectedData,ddr_rd_data);
 		end
+		expectedData <= expectedData + 1;
 	end
 end
     
