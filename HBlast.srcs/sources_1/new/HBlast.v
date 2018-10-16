@@ -148,7 +148,8 @@ output [7:0] arlength,
 //output after expansion
 output [31:0] locationStart,
 output [31:0] locationEnd,
-
+output [10:0] highestScore,
+output processEnd,
    // Inouts
    inout [7:0]                         ddr3_dq,
    inout [0:0]                        ddr3_dqs_n,
@@ -223,8 +224,26 @@ wire		app_wdf_rdy;
 
 assign arlength = 8'b00001000; // How much should it be?
 assign ddr_user_clk = clk;
+
 memInt memoryInt(
 .clk(clk),
+.rst(rst),
+.ddr_rd_done(o_rd_ack), // acceptance for reading the data
+.ddr_rd(i_rd), // request to read
+.readAdd(i_rd_addr), // address to read from ddr
+.ddr_rd_valid(o_rd_data_valid), // indicates ddr's readiness 
+.ddr_rd_data(o_rd_data), // data requested from ddr
+.query(),
+.queryValid(),
+//ouput for comparator
+//input rdNew,
+//. [12:0] maxScoreOut,
+//output [31:0] outAddress,
+.locationStart(locationStart),
+.locationEnd(locationEnd),
+.highestScore(highestScore),
+.processEnd(processEnd)
+/*.clk(clk),
 .rst(rst),
 .ddr_rd_done(s_arready),
 .ddr_rd(s_arvalid),
@@ -240,7 +259,7 @@ memInt memoryInt(
  //output [31:0] outAddress,
  .locationStart(locationStart),
  .locationEnd(locationEnd)
- //.hitTEST()
+ //.hitTEST()*/
      );
  
  blastT queryB(
@@ -252,24 +271,7 @@ memInt memoryInt(
     .querryValid(querryValid)
      );
  
- axi4_brdige AXi4(
-     .clk(clk),
-     .rst(rst),
-     //slave
-     .s_arvalid(s_arvalid),
-     .s_araddr(s_aradress),
-     .s_arlen(arlength),
-     .s_rvalid(s_rvalid),
-     .s_arready(s_arready),
-     .s_rdata(s_rdata),
-     //master
-     .m_arvalid(arvalid),
-     .m_araddr(araddres),
-     .m_arlen(arlength),
-     .m_arready(arready),
-     .m_rvalid(rvalid),
-     .m_rdata(rdata)
-         );
+
          
               
     // Start of User Design top instance
