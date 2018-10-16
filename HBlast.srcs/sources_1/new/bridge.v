@@ -21,8 +21,8 @@ input i_ddr_wr_rdy,
 input i_rd,
 output reg o_rd_ack,
 input [27:0] i_rd_addr,
-output wire [63:0] o_rd_data,
-output wire o_rd_valid,
+output wire [511:0] o_rd_data,
+output reg o_rd_valid,
 //DDR read signals
 input [63:0] i_ddr_rd_data,
 input i_ddr_rd_data_valid
@@ -31,6 +31,11 @@ input i_ddr_rd_data_valid
 reg [27:0] ddr_wr_addr;
 reg [1:0] state;
 reg [2:0] rdCount;
+reg [2:0] receivedRdCount;
+reg [63:0] rdData[2:0];
+
+assign o_rd_data = {rdData[7],rdData[6],rdData[5],rdData[4],rdData[3],rdData[2],rdData[1],rdData[0]};
+
 localparam IDLE = 'd0,
 			WAIT_WR = 'd1,
 			WAIT_RD = 'd2,
@@ -101,7 +106,24 @@ begin
 	endcase
 end
 
-assign o_rd_data = i_ddr_rd_data;
-assign o_rd_valid = i_ddr_rd_data_valid;
+always @(posedge clk)
+begin
+    if(rst)
+        receivedRdCount <= 0;
+    else if(i_ddr_rd_data_valid)
+    begin
+        rdData[receivedRdCount] = i_ddr_rd_data;
+        receivedRdCount <= receivedRdCount+1;
+    end
+end
+
+always @(posedge clk)
+begin
+    if(receivedRdCount==7 & i_ddr_rd_data_valid)
+        o_rd_valid = 1'b1;
+    else
+        o_rd_valid = 1'b0;
+end
+    
 
 endmodule

@@ -184,8 +184,17 @@ output [31:0] locationEnd,
    // System reset - Default polarity of sys_rst pin is Active Low.
    // System reset polarity will change based on the option 
    // selected in GUI.
-   input                                        sys_rs,
-   output                                       ddr_user_clk
+   input                                        sys_rst,
+   
+   input i_wr,
+   input [63:0] i_wr_data,
+   output o_wr_ack,
+   input i_rd,
+   output o_rd_ack,
+   input [27:0] i_rd_addr,
+   output [63:0] o_rd_data,
+   output o_rd_data_valid,
+   output ddr_user_clk
  );
  
  
@@ -212,27 +221,16 @@ wire		app_rd_data_valid;
 wire		app_rdy;
 wire		app_wdf_rdy;
 
-
-wire pcie_ddr__wr;
-wire [63:0] pcie_ddr_wr_data;
-wire pcie_ddr_wr_ack;
-wire meminf_ddr_rd;
-wire ddr_meminf_rd_ack;
-wire [27:0] meminf_ddr_rd_addr;
-wire [511:0] ddr_meminf_rd_data;
-wire ddr_meminf_rd_data_valid;
-
-
 assign arlength = 8'b00001000; // How much should it be?
 assign ddr_user_clk = clk;
 memInt memoryInt(
 .clk(clk),
 .rst(rst),
-.ddr_rd_done(ddr_meminf_rd_ack),
-.ddr_rd(meminf_ddr_rd),
- .readAdd(meminf_ddr_rd_addr),
- .ddr_rd_valid(ddr_meminf_rd_data_valid),
- .ddr_rd_data(ddr_meminf_rd_data),
+.ddr_rd_done(s_arready),
+.ddr_rd(s_arvalid),
+ .readAdd(s_aradress),
+ .ddr_rd_valid(s_rvalid),
+ .ddr_rd_data(s_rdata),
  //input for query
  .query(querry),
  .queryValid(querryValid),
@@ -244,7 +242,6 @@ memInt memoryInt(
  .locationEnd(locationEnd)
  //.hitTEST()
      );
-          
  
  blastT queryB(
     .clk(clk),
@@ -342,14 +339,13 @@ brdige bridge(
 .o_ddr_wr_data(app_wdf_data),
 .o_ddr_wr_en(app_wdf_wren),
 .i_ddr_wr_rdy(app_wdf_rdy),
-.i_rd(meminf_ddr_rd),
-.o_rd_ack(ddr_meminf_rd_ack),
-.i_rd_addr(meminf_ddr_rd_addr),
-.o_rd_data(ddr_meminf_rd_data),
-.o_rd_valid(ddr_meminf_rd_data_valid),
+.i_rd(i_rd),
+.o_rd_ack(o_rd_ack),
+.i_rd_addr(i_rd_addr),
+.o_rd_data(o_rd_data),
+.o_rd_valid(o_rd_data_valid),
 .i_ddr_rd_data(app_rd_data),
 .i_ddr_rd_data_valid(app_rd_data_valid)
 );
-
 
 endmodule
