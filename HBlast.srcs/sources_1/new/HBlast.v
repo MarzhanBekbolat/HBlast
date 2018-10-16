@@ -148,7 +148,8 @@ output [7:0] arlength,
 //output after expansion
 output [31:0] locationStart,
 output [31:0] locationEnd,
-
+output [10:0] highestScore,
+output processEnd,
    // Inouts
    inout [7:0]                         ddr3_dq,
    inout [0:0]                        ddr3_dqs_n,
@@ -225,25 +226,22 @@ wire ddr_meminf_rd_data_valid;
 
 assign arlength = 8'b00001000; // How much should it be?
 assign ddr_user_clk = clk;
+
 memInt memoryInt(
 .clk(clk),
 .rst(rst),
 .ddr_rd_done(ddr_meminf_rd_ack),
 .ddr_rd(meminf_ddr_rd),
- .readAdd(meminf_ddr_rd_addr),
- .ddr_rd_valid(ddr_meminf_rd_data_valid),
- .ddr_rd_data(ddr_meminf_rd_data),
- //input for query
- .query(querry),
- .queryValid(querryValid),
- //ouput for comparator
- //input rdNew,
- //output [12:0] maxScoreOut,
- //output [31:0] outAddress,
- .locationStart(locationStart),
- .locationEnd(locationEnd)
- //.hitTEST()
-     );
+.readAdd(meminf_ddr_rd_addr),
+.ddr_rd_valid(ddr_meminf_rd_data_valid),
+.ddr_rd_data(ddr_meminf_rd_data),
+.query(),
+.queryValid(),
+.locationStart(locationStart),
+.locationEnd(locationEnd),
+.highestScore(highestScore),
+.processEnd(processEnd)
+);
           
  
  blastT queryB(
@@ -253,9 +251,7 @@ memInt memoryInt(
     .dataValid(dataValid),
     .querry(querry),
     .querryValid(querryValid)
-     );
- 
-         
+     );       
               
     // Start of User Design top instance
     //***************************************************************************
