@@ -57,6 +57,7 @@ always @(posedge clk)
            CurrentLocation <=0;
            startExpand <=0;
            k <= 0;
+           highBitEnd <= 0;
            state <=IDLE;
         end 
      else 
@@ -126,7 +127,7 @@ always @(posedge clk)
     .rst(rst),
     .stop(stop),
     .dbValid(dataBaseValid),
-    .inQuery(query[i+:22]),
+    .inQuery(queryReg[i+:22]),
     .inDB(dBCompareWmer),
     .isMatch(ouput[i/2]),
     .highBitEnd(highBitEnd)

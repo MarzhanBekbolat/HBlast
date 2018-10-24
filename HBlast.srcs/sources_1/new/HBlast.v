@@ -135,16 +135,15 @@ module HBlast #(
                                      // =1 for active low reset,
                                      // =0 for active high.
                )(
-input rst,
+input rst, //sys_rst_n?
 input [31:0] data,
 input [31:0] address,
 input dataValid,
-input [511:0] rdata,
-input arready,
-input rvalid,
-output [31:0] araddres,
-output arvalid,
-output [7:0] arlength,
+//input [511:0] rdata,
+//input arready,
+//input rvalid,
+//output [31:0] araddres,
+//output arvalid,
 //output after expansion
 output [31:0] locationStart,
 output [31:0] locationEnd,
@@ -185,11 +184,11 @@ output processEnd,
    // System reset - Default polarity of sys_rst pin is Active Low.
    // System reset polarity will change based on the option 
    // selected in GUI.
-   input                                        sys_rs,
+   input                                        sys_rst,
    output                                       ddr_user_clk
  );
  
- 
+wire reset_Intern; 
 wire [511:0] querry;
 wire querryValid; 
 //slave 
@@ -224,25 +223,26 @@ wire [511:0] ddr_meminf_rd_data;
 wire ddr_meminf_rd_data_valid;
 
 
-assign arlength = 8'b00001000; // How much should it be?
 assign ddr_user_clk = clk;
+assign reset_Intern = sys_rst | ~init_calib_complete;
 
 memInt memoryInt(
 .clk(clk),
-.rst(rst),
+.rst(reset_Intern),
 .ddr_rd_done(ddr_meminf_rd_ack),
 .ddr_rd(meminf_ddr_rd),
 .readAdd(meminf_ddr_rd_addr),
 .ddr_rd_valid(ddr_meminf_rd_data_valid),
 .ddr_rd_data(ddr_meminf_rd_data),
-.query(),
-.queryValid(),
+.query(querry),                   //Check later
+.queryValid(querryValid),
 .locationStart(locationStart),
 .locationEnd(locationEnd),
 .highestScore(highestScore),
 .processEnd(processEnd)
 );
-          
+
+wire [63:0] dbWrData;
  
  blastT queryB(
     .clk(clk),
@@ -250,7 +250,10 @@ memInt memoryInt(
     .address(address),
     .dataValid(dataValid),
     .querry(querry),
-    .querryValid(querryValid)
+    .querryValid(querryValid),
+    .dBData(dbWrData),
+    .dBDataWrEn(dbWrEn),
+    .dBDataWrAck(dbWrAck)
      );       
               
     // Start of User Design top instance
@@ -302,7 +305,7 @@ memInt memoryInt(
            .app_ref_ack                    (app_ref_ack),
            .app_zq_ack                     (app_zq_ack),
            .ui_clk                         (clk),
-           .ui_clk_sync_rst                (rst),
+           .ui_clk_sync_rst                (),
           
            .app_wdf_mask                   (8'h00),
           
@@ -327,10 +330,10 @@ memInt memoryInt(
 		   
 brdige bridge(
 .clk(clk),
-.rst(!init_calib_complete),
-.i_wr(i_wr),
-.o_wr_done(o_wr_ack),
-.i_wr_data(i_wr_data),
+.rst(reset_Intern),
+.i_wr(dbWrEn),
+.o_wr_done(dbWrAck),
+.i_wr_data(dbWrData),
 .o_ddr_app_en(app_en),
 .o_ddr_cmd(app_cmd),
 .o_ddr_addr(app_addr),

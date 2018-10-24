@@ -460,11 +460,12 @@ module tbTop;
   //                         FPGA Memory Controller
   //===========================================================================
 
-  reg [63:0] wr_data; 
-  wire [63:0] ddr_rd_data; 
-  reg wr_ddr;  
-reg rd_ddr;  
-reg [27:0] ddr_rd_addr;
+wire clk;
+reg dataValid;
+reg [31:0] address;
+reg [31:0] data;
+wire [10:0] highestScore;
+wire processEnd;
   
   HBlast #
     (
@@ -518,15 +519,13 @@ reg [27:0] ddr_rd_addr;
       .init_calib_complete (init_calib_complete),
       .sys_rst             (sys_rst),
 	  
-	  .ddr_user_clk(ddr_user_clk),
-	  .i_wr(wr_ddr),
-      .i_wr_data(wr_data),
-	  .o_wr_ack(wr_ack),
-	  .i_rd(rd_ddr),
-	  .o_rd_ack(rd_ack),
-	  .i_rd_addr(ddr_rd_addr),
-	  .o_rd_data(ddr_rd_data),
-	  .o_rd_data_valid(ddr_rd_data_valid)
+	  .ddr_user_clk(clk),
+	  .rst(!sys_rst_n),
+      .data(data),
+      .address(address),
+      .dataValid(dataValid),
+      .processEnd(processEnd),
+      .highestScore(highestScore)
      );
 
   //**************************************************************************//
@@ -559,95 +558,200 @@ reg [27:0] ddr_rd_addr;
       end
     end
   endgenerate
+  
+  reg [31:0] ddr [0:99];
+  
+  initial
+  begin
+     ddr[0] = 32'h120d5698;
+     ddr[1] = 32'h120d5698;
+     ddr[2] = 32'h120d5698;            
+     ddr[3] = {32{1'b1}}; 
+     ddr[4] = {32{1'b1}};//{512{1'b1}};
+     ddr[5] = {32{1'b1}}; 
+     ddr[6] = {32{1'b1}}; 
+     ddr[7] = {32{1'b1}}; 
+     ddr[8] = 32'h120d5698; 
+     ddr[9] = {32{1'b1}}; 
+     ddr[10] = {32{1'b1}}; 
+     ddr[11] = {32{1'b1}}; 
+     ddr[12] = {32{1'b1}};  
+     ddr[13] = {32{1'b1}}; 
+     ddr[14] = {32{1'b1}}; 
+     ddr[15] = {32{1'b1}}; 
+     ddr[16] = {32{1'b1}}; 
+     ddr[17] = {32{1'b1}};
+          ddr[18] = {32{1'b1}};
+          ddr[19] = {32{1'b1}};             
+          ddr[20] = {32{1'b1}}; 
+          ddr[21] = {32{1'b1}};//{512{1'b1}};
+          ddr[22] = {32{1'b1}}; 
+          ddr[23] = {32{1'b1}}; 
+          ddr[24] = {32{1'b1}}; 
+          ddr[25] = {32{1'b1}}; 
+          ddr[26] = {32{1'b1}}; 
+          ddr[27] = {32{1'b1}}; 
+          ddr[28] = {32{1'b1}}; 
+          ddr[29] = {32{1'b1}}; 
+          ddr[30] = {32{1'b1}}; 
+          ddr[31] = {32{1'b1}}; 
+          ddr[32] = {32{1'b1}}; 
+          ddr[33] = {32{1'b1}}; 
+          ddr[34] = {32{1'b1}};
+               ddr[35] = {32{1'b1}};
+               ddr[36] = {32{1'b1}};             
+               ddr[37] = {32{1'b1}}; 
+               ddr[38] = {32{1'b1}};//{512{1'b1}};
+               ddr[39] = {32{1'b1}}; 
+               ddr[40] = {32{1'b1}}; 
+               ddr[41] = {32{1'b1}}; 
+               ddr[42] = {32{1'b1}}; 
+               ddr[43] = {32{1'b1}}; 
+               ddr[44] = {32{1'b1}}; 
+               ddr[45] = {32{1'b1}}; 
+               ddr[46] = 32'h120d5698; 
+               ddr[47] = 32'h120d5698;
+               ddr[48] = {32{1'b1}}; 
+               ddr[49] = {32{1'b1}}; 
+               ddr[50] = {32{1'b1}}; 
+                  ddr[51] = {32{1'b1}};
+                           ddr[52] = {32{1'b1}};             
+                           ddr[53] = {32{1'b1}}; 
+                           ddr[54] = {32{1'b1}};//{512{1'b1}};
+                           ddr[55] = {32{1'b1}}; 
+                           ddr[56] = {32{1'b1}}; 
+                           ddr[57] = {32{1'b1}}; 
+                           ddr[58] = {32{1'b1}}; 
+                           ddr[59] = {32{1'b1}}; 
+                           ddr[60] = {32{1'b1}}; 
+                           ddr[61] = {32{1'b1}}; 
+                           ddr[62] = {32{1'b1}}; 
+                           ddr[63] = {32{1'b1}}; 
+                           ddr[64] = 32'h1234abc0; ; 
+                           ddr[65] = 32'h1234abcd; //32'h1234abc0;
+                           ddr[66] = 32'h1234abcd; //1234abcd1234abcd1234abcd
+                           ddr[67] = {32{1'b0}};
+                           ddr[68] = {32{1'b0}};
+                           ddr[69] = {32{1'b0}};
+                            ddr[70] = {32{1'b0}};
+                                         ddr[71] = {32{1'b0}};            
+                                         ddr[72] = {32{1'b0}};
+                                         ddr[73] = {32{1'b0}};//{512{1'b1}};
+                                         ddr[74] = {32{1'b0}}; 
+                                         ddr[75] = {32{1'b0}}; 
+                                         ddr[76] = {32{1'b0}};
+                                         ddr[77] = {32{1'b0}}; 
+                                         ddr[78] = {32{1'b0}}; 
+                                         ddr[79] = {32{1'b0}}; 
+                                         ddr[80] = {32{1'b0}}; 
+                                         ddr[81] = {32{1'b0}};
+                                         ddr[82] = {32{1'b0}};
+                                         ddr[83] = {32{1'b0}};
+                                         ddr[84] = {32{1'b0}};
+                                         ddr[85] = {32{1'b0}};
+                                          ddr[86] = {32{1'b0}};            
+                                                                                 ddr[87] = {32{1'b0}};
+                                                                                 ddr[88] = {32{1'b0}};//{512{1'b1}};
+                                                                                 ddr[89] = {32{1'b0}}; 
+                                                                                 ddr[90] = {32{1'b0}}; 
+                                                                                 ddr[91] = {32{1'b0}};
+                                                                                 ddr[92] = {32{1'b0}}; 
+                                                                                 ddr[93] = {32{1'b0}}; 
+                                                                                 ddr[94] = {32{1'b0}}; 
+                                                                                 ddr[95] = {32{1'b0}}; 
+                                                                                 ddr[96] = {32{1'b0}};
+                                                                                 ddr[97] = {32{1'b0}};
+                                                                                 ddr[98] = {32{1'b0}};
+                                                                                 ddr[99] = {32{1'b0}};
+                                                                                 ddr[100] = {32{1'b0}};
+  end
+  
+    reg [31:0] query [0:15];
+  initial
+  begin
+  //'h1234abcd
+     query[0] = 32'h1234abcd;
+     query[1] = 32'h1234abcd;
+     query[2] = 32'h1234abcd;            
+     query[3] = {32{1'b0}}; 
+     query[4] = {32{1'b0}}; 
+     query[5] = {32{1'b0}}; 
+     query[6] = {32{1'b0}}; 
+     query[7] = {32{1'b0}}; 
+     query[8] = {32{1'b0}}; 
+     query[9] = {32{1'b0}}; 
+     query[10] = {32{1'b0}}; 
+     query[11] = {32{1'b0}};  
+     query[12] = {32{1'b0}}; 
+     query[13] = {32{1'b0}}; 
+     query[14] = {32{1'b0}};  
+     query[15] = {32{1'b0}}; 
+     query[16] = {32{1'b0}}; 
+  end
     
 initial
 begin
-    wr_ddr = 0;
-	rd_ddr = 0;
-	wr_data = `DDRTestData;
 	wait(init_calib_complete);
 	$display("DDR link-up");
 	#50000;
-	@(posedge ddr_user_clk);
-	@(posedge ddr_user_clk);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b1;
-	wr_data <= wr_data+1;
-	wait(wr_ack);
-	@(posedge ddr_user_clk);
-	wr_ddr <= 1'b0;
-	@(posedge ddr_user_clk);
-	rd_ddr <= 1'b1;
-	ddr_rd_addr <= 'h0;
-	wait(rd_ack);
-	@(posedge ddr_user_clk);
-	rd_ddr <= 1'b0;
+	wrDB();
+	wrQuerry();
 end
 
-reg [63:0] expectedData;
 
-initial
+
+task wrDDR;
+input [31:0] addressIn;
+input [31:0] dataIn;
 begin
-	expectedData = `DDRTestData;
+    @(posedge clk);
+    dataValid <= 1;
+    data <= dataIn;
+    address <= addressIn;
+    @(posedge clk);
+    dataValid <= 0;
 end
+endtask
 
-always@(posedge ddr_user_clk)
+task wrDB;
+    integer i;
+    integer data;
 begin
-	if(ddr_rd_data_valid)
-	begin
-		$display("received data from ddr %0x",ddr_rd_data);
-		if(ddr_rd_data == expectedData)
-		begin
-			$display("Test passed");
-		end
-		else
-		begin
-			$display("Data mismatch, expected %0x, received %0x",expectedData,ddr_rd_data);
-		end
-		expectedData <= expectedData + 1;
-	end
+    data=0;
+    for(i=0;i<100;i=i+2)
+    begin
+     $display("Write ddr:  %d and %d", i, i+1);
+     wrDDR(64,ddr[i]);
+     wrDDR(68,ddr[i+1]);
+     #100000;
+    end
+end
+endtask
+
+task wrQuerry;
+    integer data;
+    integer i;
+    integer addreesQuery;
+begin
+    addreesQuery =0;
+    data=0;
+    for(i=0;i<16;i=i+1)
+    begin
+     $display("Write query: %d", i);
+     wrDDR(addreesQuery,query[i]);
+     addreesQuery=addreesQuery+4;
+     #100000;
+    end
+end
+endtask
+
+always @(clk)
+begin
+    if(processEnd)
+    begin
+        $display("Process ended");
+        $display("Highest score %d",highestScore);
+    end
 end
     
 endmodule

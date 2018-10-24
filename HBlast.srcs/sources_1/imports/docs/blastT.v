@@ -26,7 +26,11 @@ input [31:0] data,
 input [31:0] address, //How many bits should it be? 
 input dataValid,
 output [511:0] querry,
-output reg querryValid
+output reg querryValid,
+
+output reg [63:0] dBData,
+output reg dBDataWrEn,
+input dBDataWrAck
 );
 
 reg [511:0] querryReg;
@@ -35,7 +39,7 @@ assign querry = querryReg;
 
 always @(posedge clk)
 begin
-    if (dataValid & address == 64)
+    if (dataValid & address == 60)
         querryValid <= 1'b1;
     else
         querryValid <= 1'b0;
@@ -92,11 +96,25 @@ begin
                 querryReg[479:448] <= data;
             end
             60:begin
-                querryReg[512:480] <= data;
+                querryReg[511:480] <= data;
+            end
+            64:begin
+                dBData[31:0] <= data;
+            end
+            68:begin
+                dBData[63:32] <= data;
             end
                 
         endcase
     end
+end
+
+always @(posedge clk)
+begin
+    if(dataValid & address==68)
+        dBDataWrEn <= 1'b1;
+    else if(dBDataWrAck)
+        dBDataWrEn <= 1'b0;
 end
 
 endmodule

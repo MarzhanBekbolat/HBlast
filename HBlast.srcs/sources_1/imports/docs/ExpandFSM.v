@@ -54,7 +54,11 @@
                LOAD2 = 3'b010,
                EXPAND = 3'b011,
                WAIT   = 3'b100,
-               MERGE  = 3'b101;
+               MERGE  = 3'b101,
+               WAIT_LOAD_DONE = 3'b110;
+                              
+
+               
     
     assign outAddress = addressCalc;
     assign  range1 = LocationQ <= `th ? LocationQ : `th;    
@@ -145,15 +149,15 @@
                     begin
                         addressCalc <= addressCalc + 512;     
                     end          
-                    if(loadDone)
-                    begin
-                        state <= MERGE;
-                    end 
+                        state <=WAIT_LOAD_DONE;
                         
                 end
-                
+                WAIT_LOAD_DONE:begin
+                load <= 1'b0;
+                if(loadDone)
+                   state <= MERGE;
+                end
                 MERGE:begin
-                     load <= 1'b0;
                     if(dataValid)
                     begin
                         if(shiftNumber < 199)

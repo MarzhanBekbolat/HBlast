@@ -98,6 +98,7 @@ output processEnd
              if(loadExpOut)
              begin
                 ddr_rd <= 1'b1;
+                 $display("Read signal from expand from address:   %d", outAddress);
                 readAdd <= outAddress; 
                 state <= WAIT_EXP;
              end
@@ -115,10 +116,11 @@ output processEnd
                         begin
                         state <= WAIT_STOP;
                         end
-                        else
+                        else if(queryValid)
                         begin
                         load <= 1'b0;
                         ddr_rd <= 1'b1;
+                        $display("Read signal for not start expand from address:   %d", DataCounter*512);
                         readAdd <= DataCounter*512; 
                         state <= WAIT;
                         shift <=1'b0;
@@ -140,6 +142,7 @@ output processEnd
                     begin
                          DataCounter <= DataCounter +1; 
                          ddr_rd <= 1'b1;
+                         $display("Read signal for ShiftNo rem 490 == 0 from address:   %d", (DataCounter +1)*512);
                          readAdd <= (DataCounter +1)*512; 
                          state <= WAIT; 
                          load <= 0;
@@ -165,6 +168,7 @@ output processEnd
                begin
                      DataCounter <= DataCounter +1; //Do I need new register to DataCounter?
                      ddr_rd <= 1'b1;
+                     $display("Read signal for ShiftNo rem 490 == 0 and shiftNo non zero from address:   %d", (DataCounter +1)*512);
                      readAdd <= (DataCounter +1)*512; 
                      state <= WAIT;
                      load <= 0;
@@ -190,6 +194,7 @@ output processEnd
         if(ddr_rd_valid)// & ddr_rd_done
         begin
             dbValid <= 1'b1;
+            $display("Data came from ddr:   %h", ddr_rd_data);
             dbHit <= ddr_rd_data;
             load <= 1'b1;
              //shift <= 1'b1;
@@ -230,33 +235,22 @@ output processEnd
       end
       
       SHIFTLOAD: begin
-        if(DataCounter == 0)
-        begin
-            if(queryValid)
-            begin
+   
             dbValid <= 1'b1;
             shift <= 1'b0;
             load <= 1'b0;
             state <= WAIT_S;
-            end
-        end
-        else
-        begin
-            dbValid <= 1'b1;
-            shift <= 1'b0;
-            load <= 1'b0;
-            state <= WAIT_S;
-       end
       end
       
      WAIT_EXP: begin
+              ddr_rd <=1'b0;  
               if(ddr_rd_valid) //& ddr_rd_done)
               begin
                 loadDone <= 1'b1;
                 queryValidExp <= 1'b1;
+                 $display("Data came from ddr to Exapnd:   %h", ddr_rd_data);
                 dbValid <= 1'b0;
-                dbExpand <= ddr_rd_data;
-                ddr_rd <=1'b0;   
+                dbExpand <= ddr_rd_data; 
               end
               if(loadDone)
                 state <= IDLE;
@@ -275,14 +269,14 @@ output processEnd
     WAIT_S: begin
             if(DataCounter == 0)
             begin
-              if(queryValid)
-                begin
+              /*if(queryValid)
+                begin*/
                 if(ShiftNo==490 || hit)
                     state <= IDLE;
                 else if(!hit)
                     state <= SHIFT;
                 end
-            end
+            //end
             else
             begin
                 dbValid <=1'b1;

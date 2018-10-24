@@ -32,7 +32,7 @@ reg [27:0] ddr_wr_addr;
 reg [1:0] state;
 reg [2:0] rdCount;
 reg [2:0] receivedRdCount;
-reg [63:0] rdData[2:0];
+reg [63:0] rdData[7:0]; //This should be 8 bit I guess
 
 assign o_rd_data = {rdData[7],rdData[6],rdData[5],rdData[4],rdData[3],rdData[2],rdData[1],rdData[0]};
 
@@ -65,7 +65,7 @@ begin
 			begin
 				o_ddr_app_en <= 1'b1;
 				o_ddr_cmd <= 2'b001;
-				o_ddr_addr <= i_rd_addr;
+				o_ddr_addr <= (i_rd_addr/512)*64;
 				rdCount <= 0;
 				o_rd_ack <= 1'b1;
 				state <= WAIT_RD;
