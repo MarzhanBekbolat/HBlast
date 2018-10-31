@@ -221,7 +221,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.2292297"
-     inkscape:cx="-1992.2181"
+     inkscape:cx="-2773.0942"
      inkscape:cy="968.32963"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -242,7 +242,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -421,25 +421,6 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <text
-       id="text11940"
-       y="94.065025"
-       x="-434.82422"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="rotate(30)"><tspan
-         sodipodi:role="line"
-         id="tspan11992"
-         x="-434.82422"
-         y="94.065025">!stop &amp; start</tspan><tspan
-         sodipodi:role="line"
-         id="tspan11994"
-         x="-434.82422"
-         y="111.70392"></tspan><tspan
-         sodipodi:role="line"
-         id="tspan11996"
-         x="-434.82422"
-         y="129.3428"></tspan></text>
-    <text
        id="text11948"
        y="-132.88918"
        x="-351.59464"
@@ -473,143 +454,5 @@
            style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.88606763px;font-family:Calibri;fill:#000000;stroke-width:0.26458332"
            dy="0"
            dx="0"> </tspan></tspan></text>
-    <text
-       id="text11940-3"
-       y="288.61401"
-       x="21.286879"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="rotate(90)"><tspan
-         sodipodi:role="line"
-         id="tspan12022"
-         x="21.286879"
-         y="288.61401">loadDone</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12024"
-         x="21.286879"
-         y="306.2529"></tspan><tspan
-         sodipodi:role="line"
-         id="tspan12026"
-         x="21.286879"
-         y="323.89178"></tspan></text>
-    <text
-       id="text11940-3-8"
-       y="-144.94164"
-       x="-497.64069"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="rotate(-45)"><tspan
-         sodipodi:role="line"
-         id="tspan12112"
-         x="-497.64069"
-         y="-144.94164">shiftNumber &lt; 199</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12114"
-         x="-497.64069"
-         y="-127.30274">              ||</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12116"
-         x="-497.64069"
-         y="-109.66386">shiftNumber &gt; 290</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12118"
-         x="-497.64069"
-         y="-92.024963"></tspan></text>
-    <text
-       id="text11940-3-8-5"
-       y="67.089508"
-       x="-564.53241"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"><tspan
-         sodipodi:role="line"
-         id="tspan12120"
-         x="-564.53241"
-         y="67.089508">dataCounter == 0 </tspan><tspan
-         sodipodi:role="line"
-         id="tspan12122"
-         x="-564.53241"
-         y="84.728401">              &amp; </tspan><tspan
-         sodipodi:role="line"
-         id="tspan12124"
-         x="-564.53241"
-         y="102.36729">shiftNumber &lt; 199</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12126"
-         x="-564.53241"
-         y="120.00617"></tspan></text>
-    <text
-       id="text11940-3-8-0"
-       y="533.60016"
-       x="-442.10956"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="rotate(30)"><tspan
-         style="stroke-width:0.26458332"
-         sodipodi:role="line"
-         id="tspan12022-9-5"
-         x="-442.10956"
-         y="533.60016">loadDone</tspan><tspan
-         style="stroke-width:0.26458332"
-         sodipodi:role="line"
-         id="tspan12024-9-3"
-         x="-442.10956"
-         y="551.23901" /><tspan
-         style="stroke-width:0.26458332"
-         sodipodi:role="line"
-         id="tspan12026-0-5"
-         x="-442.10956"
-         y="568.87793" /></text>
-    <text
-       id="text11940-3-8-8"
-       y="764.99542"
-       x="38.75264"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111111px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       xml:space="preserve"
-       transform="rotate(90)"><tspan
-         sodipodi:role="line"
-         id="tspan12134">dataValid</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12136"></tspan><tspan
-         sodipodi:role="line"
-         id="tspan12138"></tspan></text>
-    <text
-       id="text11940-3-8-6"
-       y="-510.56332"
-       x="-612.52271"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="rotate(-30)"><tspan
-         sodipodi:role="line"
-         id="tspan12140"
-         x="-612.52271"
-         y="-510.56332">dataMerged[m1-:2] != Query[i1-:2] </tspan><tspan
-         sodipodi:role="line"
-         id="tspan12142"
-         x="-612.52271"
-         y="-492.92444">                                 &amp;</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12144"
-         x="-612.52271"
-         y="-475.28555"> dataMerged[m2+:2] != Query[i2+:2]</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12146"
-         x="-612.52271"
-         y="-457.64667">                                  ||</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12148"
-         x="-612.52271"
-         y="-440.00775">       k1 == range1 &amp; k2 == range2</tspan><tspan
-         sodipodi:role="line"
-         id="tspan12150"
-         x="-612.52271"
-         y="-422.36887"></tspan><tspan
-         sodipodi:role="line"
-         id="tspan12152"
-         x="-612.52271"
-         y="-404.72998"></tspan><tspan
-         sodipodi:role="line"
-         id="tspan12154"
-         x="-612.52271"
-         y="-387.09109"></tspan></text>
   </g>
 </svg>

@@ -107,7 +107,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.27201604"
-     inkscape:cx="6.0876261"
+     inkscape:cx="-651.9618"
      inkscape:cy="508.63345"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -126,7 +126,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -158,7 +158,7 @@
          y="3.8971727">WAIT_WR_CMD</tspan></text>
     <a
        id="a979-88"
-       transform="matrix(1.8280774,0,0,1.7597218,-373.24455,-312.76701)">
+       transform="matrix(1.8280774,0,0,1.7597218,-285.40233,-313.29618)">
       <ellipse
          ry="21.281483"
          rx="23.834478"
@@ -170,18 +170,18 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.51570612"
-       x="-252.06958"
-       y="6.0867462"
+       x="-158.41089"
+       y="5.5904427"
        id="text924-9-2"
        transform="scale(0.93789609,1.0662162)"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.51570612"
          sodipodi:role="line"
          id="tspan12743"
-         x="-252.06958"
-         y="6.0867462">IDLE</tspan></text>
+         x="-158.41089"
+         y="5.5904427">IDLE</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6664-9-6)"
-       d="m 156.0803,-32.242756 c -194.444472,-96.201984 -366.04708,-7.63761 -372.39623,-2.226355"
+       d="M 154.82504,-33.19205 C 8.4646989,-129.8683 -120.70236,-40.867312 -125.48143,-35.42938"
        id="path6642-8-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -209,7 +209,7 @@
          y="213.95706">WAIT_WR</tspan></text>
     <a
        id="a979-88-6"
-       transform="matrix(1.8280774,0,0,1.7597218,-373.24455,-91.132511)">
+       transform="matrix(1.8280774,0,0,1.7597218,-285.40233,-91.661678)">
       <ellipse
          ry="21.281483"
          rx="23.834478"
@@ -221,17 +221,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.51570612"
-       x="-265.51923"
-       y="213.95706"
+       x="-171.86053"
+       y="213.46075"
        id="text924-9-2-9"
        transform="scale(0.93789609,1.0662162)"><tspan
          sodipodi:role="line"
          id="tspan15641"
-         x="-265.51923"
-         y="213.95706">WAIT_RD</tspan></text>
+         x="-171.86053"
+         y="213.46075">WAIT_RD</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6664-9-6-6)"
-       d="m -187.88266,26.84664 c 130.858938,151.52261 311.2723,169.58773 320.67911,180.79937"
+       d="M -103.49199,29.630491 C -7.0695656,178.91936 125.86666,196.71817 132.798,207.76453"
        id="path6642-8-0-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -243,74 +243,15 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6664-9-6-68-2)"
-       d="m -232.10775,41.679603 c -26.31605,86.073337 -2.18581,142.583657 -0.34711,145.073327"
+       d="m -144.26553,41.150436 c -26.31605,86.073334 -2.18581,142.583654 -0.34711,145.073324"
        id="path6642-8-0-4-5"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6664-9-6-68-5)"
-       d="m -211.74999,185.3344 c 26.31604,-86.073408 2.18581,-142.58373 0.34711,-145.073402"
+       d="m -123.90777,184.80523 c 26.316025,-86.073405 2.18581,-142.583727 0.34711,-145.073399"
        id="path6642-8-0-4-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="-55.442505"
-       y="-60.944569"
-       id="text18475"><tspan
-         sodipodi:role="line"
-         id="tspan18473"
-         x="-55.442505"
-         y="-60.944569"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">i_wr</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="-155.22821"
-       y="174.73474"
-       id="text18475-8"
-       transform="rotate(-90)"><tspan
-         sodipodi:role="line"
-         id="tspan18519"
-         x="-155.22821"
-         y="174.73474">i_ddr_app_rdy</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="9.8516884"
-       y="128.92998"
-       id="text18475-5"
-       transform="rotate(30)"><tspan
-         sodipodi:role="line"
-         id="tspan18521"
-         x="9.8516884"
-         y="128.92998">i_ddr_wr_rdy</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111111px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       x="-176.34233"
-       y="116.32233"
-       id="text18475-3"><tspan
-         sodipodi:role="line"
-         id="tspan18523">i_rd</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="-351.42392"
-       y="102.70487"
-       id="text18475-0"><tspan
-         sodipodi:role="line"
-         id="tspan18527"
-         x="-351.42392"
-         y="102.70487">i_ddr_app_rdy </tspan><tspan
-         sodipodi:role="line"
-         id="tspan18529"
-         x="-351.42392"
-         y="120.34376">           &amp;</tspan><tspan
-         sodipodi:role="line"
-         id="tspan18531"
-         x="-351.42392"
-         y="137.98264">  rdCount ==7</tspan></text>
   </g>
 </svg>

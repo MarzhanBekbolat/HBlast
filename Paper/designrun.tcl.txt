@@ -1,0 +1,9 @@
+synth_design -mode out_of_context -top HBlast
+opt_design
+place_design
+write_design_checktpoint
+route_design
+write dcp
+report timing
+report utilization
+report power
