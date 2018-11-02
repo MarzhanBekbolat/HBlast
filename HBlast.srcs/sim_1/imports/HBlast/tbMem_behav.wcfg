@@ -3,1038 +3,159 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tbTop_behav.wdb" id="1">
+      <db_ref path="tbMem_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tbTop" />
+            <top_module name="tbMem" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="9579470869604fs"></ZoomStartTime>
-      <ZoomEndTime time="9579553169605fs"></ZoomEndTime>
-      <Cursor1Time time="9579539452938fs"></Cursor1Time>
+      <ZoomStartTime time="4202479041666fs"></ZoomStartTime>
+      <ZoomEndTime time="4202505291667fs"></ZoomEndTime>
+      <Cursor1Time time="4202516000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="128"></NameColumnWidth>
-      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+      <NameColumnWidth column_width="95"></NameColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="247" />
+   <WVObjectSize size="31" />
    <wvobject type="divider" fp_name="divider137">
       <obj_property name="label">HBTop</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/data" type="array">
-      <obj_property name="ElementShortName">data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/address" type="array">
-      <obj_property name="ElementShortName">address[31:0]</obj_property>
-      <obj_property name="ObjectShortName">address[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/dataValid" type="logic">
-      <obj_property name="ElementShortName">dataValid</obj_property>
-      <obj_property name="ObjectShortName">dataValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/locationStart" type="array">
-      <obj_property name="ElementShortName">locationStart[31:0]</obj_property>
-      <obj_property name="ObjectShortName">locationStart[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/locationEnd" type="array">
-      <obj_property name="ElementShortName">locationEnd[31:0]</obj_property>
-      <obj_property name="ObjectShortName">locationEnd[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/highestScore" type="array">
-      <obj_property name="ElementShortName">highestScore[10:0]</obj_property>
-      <obj_property name="ObjectShortName">highestScore[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/processEnd" type="logic">
-      <obj_property name="ElementShortName">processEnd</obj_property>
-      <obj_property name="ObjectShortName">processEnd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_dq" type="array">
-      <obj_property name="ElementShortName">ddr3_dq[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dq[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_dqs_n" type="array">
-      <obj_property name="ElementShortName">ddr3_dqs_n[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dqs_n[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_dqs_p" type="array">
-      <obj_property name="ElementShortName">ddr3_dqs_p[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dqs_p[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_addr" type="array">
-      <obj_property name="ElementShortName">ddr3_addr[13:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_addr[13:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_ba" type="array">
-      <obj_property name="ElementShortName">ddr3_ba[2:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ba[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_ras_n" type="logic">
-      <obj_property name="ElementShortName">ddr3_ras_n</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ras_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_cas_n" type="logic">
-      <obj_property name="ElementShortName">ddr3_cas_n</obj_property>
-      <obj_property name="ObjectShortName">ddr3_cas_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_we_n" type="logic">
-      <obj_property name="ElementShortName">ddr3_we_n</obj_property>
-      <obj_property name="ObjectShortName">ddr3_we_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_reset_n" type="logic">
-      <obj_property name="ElementShortName">ddr3_reset_n</obj_property>
-      <obj_property name="ObjectShortName">ddr3_reset_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_ck_p" type="array">
-      <obj_property name="ElementShortName">ddr3_ck_p[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ck_p[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_ck_n" type="array">
-      <obj_property name="ElementShortName">ddr3_ck_n[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_ck_n[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_cke" type="array">
-      <obj_property name="ElementShortName">ddr3_cke[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_cke[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_cs_n" type="array">
-      <obj_property name="ElementShortName">ddr3_cs_n[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_cs_n[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_dm" type="array">
-      <obj_property name="ElementShortName">ddr3_dm[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_dm[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr3_odt" type="array">
-      <obj_property name="ElementShortName">ddr3_odt[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr3_odt[0:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/sys_clk_p" type="logic">
-      <obj_property name="ElementShortName">sys_clk_p</obj_property>
-      <obj_property name="ObjectShortName">sys_clk_p</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/sys_clk_n" type="logic">
-      <obj_property name="ElementShortName">sys_clk_n</obj_property>
-      <obj_property name="ObjectShortName">sys_clk_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/clk_ref_i" type="logic">
-      <obj_property name="ElementShortName">clk_ref_i</obj_property>
-      <obj_property name="ObjectShortName">clk_ref_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/init_calib_complete" type="logic">
-      <obj_property name="ElementShortName">init_calib_complete</obj_property>
-      <obj_property name="ObjectShortName">init_calib_complete</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/sys_rst" type="logic">
-      <obj_property name="ElementShortName">sys_rst</obj_property>
-      <obj_property name="ObjectShortName">sys_rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr_user_clk" type="logic">
-      <obj_property name="ElementShortName">ddr_user_clk</obj_property>
-      <obj_property name="ObjectShortName">ddr_user_clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/querry" type="array">
-      <obj_property name="ElementShortName">querry[511:0]</obj_property>
-      <obj_property name="ObjectShortName">querry[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/querryValid" type="logic">
-      <obj_property name="ElementShortName">querryValid</obj_property>
-      <obj_property name="ObjectShortName">querryValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/s_aradress" type="array">
-      <obj_property name="ElementShortName">s_aradress[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_aradress[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/s_arvalid" type="logic">
-      <obj_property name="ElementShortName">s_arvalid</obj_property>
-      <obj_property name="ObjectShortName">s_arvalid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/s_arready" type="logic">
-      <obj_property name="ElementShortName">s_arready</obj_property>
-      <obj_property name="ObjectShortName">s_arready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/s_rdata" type="array">
-      <obj_property name="ElementShortName">s_rdata[511:0]</obj_property>
-      <obj_property name="ObjectShortName">s_rdata[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/s_rvalid" type="logic">
-      <obj_property name="ElementShortName">s_rvalid</obj_property>
-      <obj_property name="ObjectShortName">s_rvalid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_addr" type="array">
-      <obj_property name="ElementShortName">app_addr[27:0]</obj_property>
-      <obj_property name="ObjectShortName">app_addr[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_cmd" type="array">
-      <obj_property name="ElementShortName">app_cmd[2:0]</obj_property>
-      <obj_property name="ObjectShortName">app_cmd[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_en" type="logic">
-      <obj_property name="ElementShortName">app_en</obj_property>
-      <obj_property name="ObjectShortName">app_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_wdf_data" type="array">
-      <obj_property name="ElementShortName">app_wdf_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">app_wdf_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_wdf_end" type="logic">
-      <obj_property name="ElementShortName">app_wdf_end</obj_property>
-      <obj_property name="ObjectShortName">app_wdf_end</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_wdf_wren" type="logic">
-      <obj_property name="ElementShortName">app_wdf_wren</obj_property>
-      <obj_property name="ObjectShortName">app_wdf_wren</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_rd_data" type="array">
-      <obj_property name="ElementShortName">app_rd_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">app_rd_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_rd_data_end" type="logic">
-      <obj_property name="ElementShortName">app_rd_data_end</obj_property>
-      <obj_property name="ObjectShortName">app_rd_data_end</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_rd_data_valid" type="logic">
-      <obj_property name="ElementShortName">app_rd_data_valid</obj_property>
-      <obj_property name="ObjectShortName">app_rd_data_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_rdy" type="logic">
-      <obj_property name="ElementShortName">app_rdy</obj_property>
-      <obj_property name="ObjectShortName">app_rdy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_wdf_rdy" type="logic">
-      <obj_property name="ElementShortName">app_wdf_rdy</obj_property>
-      <obj_property name="ObjectShortName">app_wdf_rdy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/pcie_ddr__wr" type="logic">
-      <obj_property name="ElementShortName">pcie_ddr__wr</obj_property>
-      <obj_property name="ObjectShortName">pcie_ddr__wr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/pcie_ddr_wr_data" type="array">
-      <obj_property name="ElementShortName">pcie_ddr_wr_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">pcie_ddr_wr_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/pcie_ddr_wr_ack" type="logic">
-      <obj_property name="ElementShortName">pcie_ddr_wr_ack</obj_property>
-      <obj_property name="ObjectShortName">pcie_ddr_wr_ack</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/meminf_ddr_rd" type="logic">
-      <obj_property name="ElementShortName">meminf_ddr_rd</obj_property>
-      <obj_property name="ObjectShortName">meminf_ddr_rd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr_meminf_rd_ack" type="logic">
-      <obj_property name="ElementShortName">ddr_meminf_rd_ack</obj_property>
-      <obj_property name="ObjectShortName">ddr_meminf_rd_ack</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/meminf_ddr_rd_addr" type="array">
-      <obj_property name="ElementShortName">meminf_ddr_rd_addr[27:0]</obj_property>
-      <obj_property name="ObjectShortName">meminf_ddr_rd_addr[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr_meminf_rd_data" type="array">
-      <obj_property name="ElementShortName">ddr_meminf_rd_data[511:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr_meminf_rd_data[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ddr_meminf_rd_data_valid" type="logic">
-      <obj_property name="ElementShortName">ddr_meminf_rd_data_valid</obj_property>
-      <obj_property name="ObjectShortName">ddr_meminf_rd_data_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/dbWrData" type="array">
-      <obj_property name="ElementShortName">dbWrData[63:0]</obj_property>
-      <obj_property name="ObjectShortName">dbWrData[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/dbWrEn" type="logic">
-      <obj_property name="ElementShortName">dbWrEn</obj_property>
-      <obj_property name="ObjectShortName">dbWrEn</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/dbWrAck" type="logic">
-      <obj_property name="ElementShortName">dbWrAck</obj_property>
-      <obj_property name="ObjectShortName">dbWrAck</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_sr_active" type="logic">
-      <obj_property name="ElementShortName">app_sr_active</obj_property>
-      <obj_property name="ObjectShortName">app_sr_active</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_ref_ack" type="logic">
-      <obj_property name="ElementShortName">app_ref_ack</obj_property>
-      <obj_property name="ObjectShortName">app_ref_ack</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/app_zq_ack" type="logic">
-      <obj_property name="ElementShortName">app_zq_ack</obj_property>
-      <obj_property name="ObjectShortName">app_zq_ack</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/device_temp" type="logic">
-      <obj_property name="ElementShortName">device_temp</obj_property>
-      <obj_property name="ObjectShortName">device_temp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CK_WIDTH" type="array">
-      <obj_property name="ElementShortName">CK_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CK_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/nCS_PER_RANK" type="array">
-      <obj_property name="ElementShortName">nCS_PER_RANK[31:0]</obj_property>
-      <obj_property name="ObjectShortName">nCS_PER_RANK[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CKE_WIDTH" type="array">
-      <obj_property name="ElementShortName">CKE_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CKE_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DM_WIDTH" type="array">
-      <obj_property name="ElementShortName">DM_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DM_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ODT_WIDTH" type="array">
-      <obj_property name="ElementShortName">ODT_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ODT_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/BANK_WIDTH" type="array">
-      <obj_property name="ElementShortName">BANK_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">BANK_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/COL_WIDTH" type="array">
-      <obj_property name="ElementShortName">COL_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">COL_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CS_WIDTH" type="array">
-      <obj_property name="ElementShortName">CS_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CS_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DQ_WIDTH" type="array">
-      <obj_property name="ElementShortName">DQ_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DQ_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DQS_WIDTH" type="array">
-      <obj_property name="ElementShortName">DQS_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DQS_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DQS_CNT_WIDTH" type="array">
-      <obj_property name="ElementShortName">DQS_CNT_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DQS_CNT_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DRAM_WIDTH" type="array">
-      <obj_property name="ElementShortName">DRAM_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DRAM_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ECC" type="array">
-      <obj_property name="ElementShortName">ECC[23:0]</obj_property>
-      <obj_property name="ObjectShortName">ECC[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ECC_TEST" type="array">
-      <obj_property name="ElementShortName">ECC_TEST[23:0]</obj_property>
-      <obj_property name="ObjectShortName">ECC_TEST[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/nBANK_MACHS" type="array">
-      <obj_property name="ElementShortName">nBANK_MACHS[31:0]</obj_property>
-      <obj_property name="ObjectShortName">nBANK_MACHS[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/RANKS" type="array">
-      <obj_property name="ElementShortName">RANKS[31:0]</obj_property>
-      <obj_property name="ObjectShortName">RANKS[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ROW_WIDTH" type="array">
-      <obj_property name="ElementShortName">ROW_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ROW_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/ADDR_WIDTH" type="array">
-      <obj_property name="ElementShortName">ADDR_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ADDR_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/BURST_MODE" type="array">
-      <obj_property name="ElementShortName">BURST_MODE[7:0]</obj_property>
-      <obj_property name="ObjectShortName">BURST_MODE[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKIN_PERIOD" type="array">
-      <obj_property name="ElementShortName">CLKIN_PERIOD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKIN_PERIOD[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKFBOUT_MULT" type="array">
-      <obj_property name="ElementShortName">CLKFBOUT_MULT[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKFBOUT_MULT[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DIVCLK_DIVIDE" type="array">
-      <obj_property name="ElementShortName">DIVCLK_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DIVCLK_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKOUT0_PHASE" type="other">
-      <obj_property name="ElementShortName">CLKOUT0_PHASE</obj_property>
-      <obj_property name="ObjectShortName">CLKOUT0_PHASE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKOUT0_DIVIDE" type="array">
-      <obj_property name="ElementShortName">CLKOUT0_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKOUT0_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKOUT1_DIVIDE" type="array">
-      <obj_property name="ElementShortName">CLKOUT1_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKOUT1_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKOUT2_DIVIDE" type="array">
-      <obj_property name="ElementShortName">CLKOUT2_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKOUT2_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/CLKOUT3_DIVIDE" type="array">
-      <obj_property name="ElementShortName">CLKOUT3_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKOUT3_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/MMCM_VCO" type="array">
-      <obj_property name="ElementShortName">MMCM_VCO[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MMCM_VCO[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/MMCM_MULT_F" type="array">
-      <obj_property name="ElementShortName">MMCM_MULT_F[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MMCM_MULT_F[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/MMCM_DIVCLK_DIVIDE" type="array">
-      <obj_property name="ElementShortName">MMCM_DIVCLK_DIVIDE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MMCM_DIVCLK_DIVIDE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/SIMULATION" type="array">
-      <obj_property name="ElementShortName">SIMULATION[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SIMULATION[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/TCQ" type="array">
-      <obj_property name="ElementShortName">TCQ[31:0]</obj_property>
-      <obj_property name="ObjectShortName">TCQ[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DRAM_TYPE" type="array">
-      <obj_property name="ElementShortName">DRAM_TYPE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DRAM_TYPE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/nCK_PER_CLK" type="array">
-      <obj_property name="ElementShortName">nCK_PER_CLK[31:0]</obj_property>
-      <obj_property name="ObjectShortName">nCK_PER_CLK[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/DEBUG_PORT" type="array">
-      <obj_property name="ElementShortName">DEBUG_PORT[23:0]</obj_property>
-      <obj_property name="ObjectShortName">DEBUG_PORT[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/RST_ACT_LOW" type="array">
-      <obj_property name="ElementShortName">RST_ACT_LOW[31:0]</obj_property>
-      <obj_property name="ObjectShortName">RST_ACT_LOW[31:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider600">
       <obj_property name="label">Bridge</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_wr" type="logic">
-      <obj_property name="ElementShortName">i_wr</obj_property>
-      <obj_property name="ObjectShortName">i_wr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_wr_done" type="logic">
-      <obj_property name="ElementShortName">o_wr_done</obj_property>
-      <obj_property name="ObjectShortName">o_wr_done</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_wr_data" type="array">
-      <obj_property name="ElementShortName">i_wr_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">i_wr_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_app_en" type="logic">
-      <obj_property name="ElementShortName">o_ddr_app_en</obj_property>
-      <obj_property name="ObjectShortName">o_ddr_app_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_cmd" type="array">
-      <obj_property name="ElementShortName">o_ddr_cmd[2:0]</obj_property>
-      <obj_property name="ObjectShortName">o_ddr_cmd[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_addr" type="array">
-      <obj_property name="ElementShortName">o_ddr_addr[27:0]</obj_property>
-      <obj_property name="ObjectShortName">o_ddr_addr[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_app_rdy" type="logic">
-      <obj_property name="ElementShortName">i_ddr_app_rdy</obj_property>
-      <obj_property name="ObjectShortName">i_ddr_app_rdy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_wr_data" type="array">
-      <obj_property name="ElementShortName">o_ddr_wr_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">o_ddr_wr_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_ddr_wr_en" type="logic">
-      <obj_property name="ElementShortName">o_ddr_wr_en</obj_property>
-      <obj_property name="ObjectShortName">o_ddr_wr_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_wr_rdy" type="logic">
-      <obj_property name="ElementShortName">i_ddr_wr_rdy</obj_property>
-      <obj_property name="ObjectShortName">i_ddr_wr_rdy</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_rd" type="logic">
-      <obj_property name="ElementShortName">i_rd</obj_property>
-      <obj_property name="ObjectShortName">i_rd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_ack" type="logic">
-      <obj_property name="ElementShortName">o_rd_ack</obj_property>
-      <obj_property name="ObjectShortName">o_rd_ack</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_rd_addr" type="array">
-      <obj_property name="ElementShortName">i_rd_addr[27:0]</obj_property>
-      <obj_property name="ObjectShortName">i_rd_addr[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_data" type="array">
-      <obj_property name="ElementShortName">o_rd_data[511:0]</obj_property>
-      <obj_property name="ObjectShortName">o_rd_data[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/o_rd_valid" type="logic">
-      <obj_property name="ElementShortName">o_rd_valid</obj_property>
-      <obj_property name="ObjectShortName">o_rd_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_rd_data" type="array">
-      <obj_property name="ElementShortName">i_ddr_rd_data[63:0]</obj_property>
-      <obj_property name="ObjectShortName">i_ddr_rd_data[63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/i_ddr_rd_data_valid" type="logic">
-      <obj_property name="ElementShortName">i_ddr_rd_data_valid</obj_property>
-      <obj_property name="ObjectShortName">i_ddr_rd_data_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/ddr_wr_addr" type="array">
-      <obj_property name="ElementShortName">ddr_wr_addr[27:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr_wr_addr[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/state" type="array">
-      <obj_property name="ElementShortName">state[1:0]</obj_property>
-      <obj_property name="ObjectShortName">state[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/rdCount" type="array">
-      <obj_property name="ElementShortName">rdCount[2:0]</obj_property>
-      <obj_property name="ObjectShortName">rdCount[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/receivedRdCount" type="array">
-      <obj_property name="ElementShortName">receivedRdCount[2:0]</obj_property>
-      <obj_property name="ObjectShortName">receivedRdCount[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/rdData" type="array">
-      <obj_property name="ElementShortName">rdData[7:0][63:0]</obj_property>
-      <obj_property name="ObjectShortName">rdData[7:0][63:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/IDLE" type="array">
-      <obj_property name="ElementShortName">IDLE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IDLE[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/WAIT_WR" type="array">
-      <obj_property name="ElementShortName">WAIT_WR[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_WR[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/WAIT_RD" type="array">
-      <obj_property name="ElementShortName">WAIT_RD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_RD[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/bridge/WAIT_WR_CMD" type="array">
-      <obj_property name="ElementShortName">WAIT_WR_CMD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_WR_CMD[31:0]</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider629">
       <obj_property name="label">memInt</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ddr_rd_done" type="logic">
-      <obj_property name="ElementShortName">ddr_rd_done</obj_property>
-      <obj_property name="ObjectShortName">ddr_rd_done</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ddr_rd" type="logic">
-      <obj_property name="ElementShortName">ddr_rd</obj_property>
-      <obj_property name="ObjectShortName">ddr_rd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/readAdd" type="array">
-      <obj_property name="ElementShortName">readAdd[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readAdd[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ddr_rd_valid" type="logic">
-      <obj_property name="ElementShortName">ddr_rd_valid</obj_property>
-      <obj_property name="ObjectShortName">ddr_rd_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ddr_rd_data" type="array">
-      <obj_property name="ElementShortName">ddr_rd_data[511:0]</obj_property>
-      <obj_property name="ObjectShortName">ddr_rd_data[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/query" type="array">
-      <obj_property name="ElementShortName">query[511:0]</obj_property>
-      <obj_property name="ObjectShortName">query[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/queryValid" type="logic">
-      <obj_property name="ElementShortName">queryValid</obj_property>
-      <obj_property name="ObjectShortName">queryValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/locationStart" type="array">
-      <obj_property name="ElementShortName">locationStart[31:0]</obj_property>
-      <obj_property name="ObjectShortName">locationStart[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/locationEnd" type="array">
-      <obj_property name="ElementShortName">locationEnd[31:0]</obj_property>
-      <obj_property name="ObjectShortName">locationEnd[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/highestScore" type="array">
-      <obj_property name="ElementShortName">highestScore[10:0]</obj_property>
-      <obj_property name="ObjectShortName">highestScore[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/processEnd" type="logic">
-      <obj_property name="ElementShortName">processEnd</obj_property>
-      <obj_property name="ObjectShortName">processEnd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/DataCounter" type="array">
-      <obj_property name="ElementShortName">DataCounter[16:0]</obj_property>
-      <obj_property name="ObjectShortName">DataCounter[16:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/queryReg" type="array">
-      <obj_property name="ElementShortName">queryReg[511:0]</obj_property>
-      <obj_property name="ObjectShortName">queryReg[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/state" type="array">
-      <obj_property name="ElementShortName">state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/queryValidQ" type="logic">
-      <obj_property name="ElementShortName">queryValidQ</obj_property>
-      <obj_property name="ObjectShortName">queryValidQ</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/shift" type="logic">
-      <obj_property name="ElementShortName">shift</obj_property>
-      <obj_property name="ObjectShortName">shift</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/load" type="logic">
-      <obj_property name="ElementShortName">load</obj_property>
-      <obj_property name="ObjectShortName">load</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/dbHit" type="array">
-      <obj_property name="ElementShortName">dbHit[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dbHit[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hit" type="logic">
-      <obj_property name="ElementShortName">hit</obj_property>
-      <obj_property name="ObjectShortName">hit</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/highBitEnd" type="logic">
-      <obj_property name="ElementShortName">highBitEnd</obj_property>
-      <obj_property name="ObjectShortName">highBitEnd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ShiftNo" type="array">
-      <obj_property name="ElementShortName">ShiftNo[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ShiftNo[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/locationQ" type="array">
-      <obj_property name="ElementShortName">locationQ[8:0]</obj_property>
-      <obj_property name="ObjectShortName">locationQ[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/loadExpOut" type="logic">
-      <obj_property name="ElementShortName">loadExpOut</obj_property>
-      <obj_property name="ObjectShortName">loadExpOut</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/queryValidReg" type="logic">
-      <obj_property name="ElementShortName">queryValidReg</obj_property>
-      <obj_property name="ObjectShortName">queryValidReg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/locationQReg" type="array">
-      <obj_property name="ElementShortName">locationQReg[8:0]</obj_property>
-      <obj_property name="ObjectShortName">locationQReg[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitReg" type="logic">
-      <obj_property name="ElementShortName">hitReg</obj_property>
-      <obj_property name="ObjectShortName">hitReg</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/ShiftNoReg" type="array">
-      <obj_property name="ElementShortName">ShiftNoReg[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ShiftNoReg[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/outAddress" type="array">
-      <obj_property name="ElementShortName">outAddress[31:0]</obj_property>
-      <obj_property name="ObjectShortName">outAddress[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/loadDone" type="logic">
-      <obj_property name="ElementShortName">loadDone</obj_property>
-      <obj_property name="ObjectShortName">loadDone</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/queryValidExp" type="logic">
-      <obj_property name="ElementShortName">queryValidExp</obj_property>
-      <obj_property name="ObjectShortName">queryValidExp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/dbExpand" type="array">
-      <obj_property name="ElementShortName">dbExpand[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dbExpand[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/stop" type="logic">
-      <obj_property name="ElementShortName">stop</obj_property>
-      <obj_property name="ObjectShortName">stop</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/dbValid" type="logic">
-      <obj_property name="ElementShortName">dbValid</obj_property>
-      <obj_property name="ObjectShortName">dbValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/startExpand" type="logic">
-      <obj_property name="ElementShortName">startExpand</obj_property>
-      <obj_property name="ObjectShortName">startExpand</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/IDLE" type="array">
-      <obj_property name="ElementShortName">IDLE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">IDLE[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/WAIT" type="array">
-      <obj_property name="ElementShortName">WAIT[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/SHIFT" type="array">
-      <obj_property name="ElementShortName">SHIFT[2:0]</obj_property>
-      <obj_property name="ObjectShortName">SHIFT[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/SHIFTLOAD" type="array">
-      <obj_property name="ElementShortName">SHIFTLOAD[2:0]</obj_property>
-      <obj_property name="ObjectShortName">SHIFTLOAD[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/WAIT_EXP" type="array">
-      <obj_property name="ElementShortName">WAIT_EXP[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_EXP[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/WAIT_S" type="array">
-      <obj_property name="ElementShortName">WAIT_S[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_S[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/WAIT_STOP" type="array">
-      <obj_property name="ElementShortName">WAIT_STOP[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_STOP[2:0]</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider673">
       <obj_property name="label">hit</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/query" type="array">
-      <obj_property name="ElementShortName">query[511:0]</obj_property>
-      <obj_property name="ObjectShortName">query[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/queryValid" type="logic">
-      <obj_property name="ElementShortName">queryValid</obj_property>
-      <obj_property name="ObjectShortName">queryValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/dataBase" type="array">
-      <obj_property name="ElementShortName">dataBase[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dataBase[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/dataBaseValid" type="logic">
-      <obj_property name="ElementShortName">dataBaseValid</obj_property>
-      <obj_property name="ObjectShortName">dataBaseValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/shift" type="logic">
-      <obj_property name="ElementShortName">shift</obj_property>
-      <obj_property name="ObjectShortName">shift</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/load" type="logic">
-      <obj_property name="ElementShortName">load</obj_property>
-      <obj_property name="ObjectShortName">load</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/stop" type="logic">
-      <obj_property name="ElementShortName">stop</obj_property>
-      <obj_property name="ObjectShortName">stop</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/ShiftNo" type="array">
-      <obj_property name="ElementShortName">ShiftNo[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ShiftNo[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/hit" type="logic">
-      <obj_property name="ElementShortName">hit</obj_property>
-      <obj_property name="ObjectShortName">hit</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/startExpand" type="logic">
-      <obj_property name="ElementShortName">startExpand</obj_property>
-      <obj_property name="ObjectShortName">startExpand</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/locationQ" type="array">
-      <obj_property name="ElementShortName">locationQ[8:0]</obj_property>
-      <obj_property name="ObjectShortName">locationQ[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/highBitEnd" type="logic">
-      <obj_property name="ElementShortName">highBitEnd</obj_property>
-      <obj_property name="ObjectShortName">highBitEnd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/state" type="logic">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/dBCompareWmer" type="array">
-      <obj_property name="ElementShortName">dBCompareWmer[21:0]</obj_property>
-      <obj_property name="ObjectShortName">dBCompareWmer[21:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/dbShiftRegOut" type="array">
-      <obj_property name="ElementShortName">dbShiftRegOut[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dbShiftRegOut[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/ouput" type="array">
-      <obj_property name="ElementShortName">ouput[245:0]</obj_property>
-      <obj_property name="ObjectShortName">ouput[245:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/CurrentLocation" type="array">
-      <obj_property name="ElementShortName">CurrentLocation[8:0]</obj_property>
-      <obj_property name="ObjectShortName">CurrentLocation[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/queryReg" type="array">
-      <obj_property name="ElementShortName">queryReg[511:0]</obj_property>
-      <obj_property name="ObjectShortName">queryReg[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/ShiftNoIn" type="array">
-      <obj_property name="ElementShortName">ShiftNoIn[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ShiftNoIn[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/k" type="array">
-      <obj_property name="ElementShortName">k[8:0]</obj_property>
-      <obj_property name="ObjectShortName">k[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/IDLE" type="logic">
-      <obj_property name="ElementShortName">IDLE</obj_property>
-      <obj_property name="ObjectShortName">IDLE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/hitMem/HITLOW" type="logic">
-      <obj_property name="ElementShortName">HITLOW</obj_property>
-      <obj_property name="ObjectShortName">HITLOW</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider698">
       <obj_property name="label">expand</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/rst" type="logic">
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/rst" type="logic">
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/start" type="logic">
-      <obj_property name="ElementShortName">start</obj_property>
-      <obj_property name="ObjectShortName">start</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/b1" type="array">
+      <obj_property name="ElementShortName">b1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">b1[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/queryValid" type="logic">
-      <obj_property name="ElementShortName">queryValid</obj_property>
-      <obj_property name="ObjectShortName">queryValid</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/b2" type="array">
+      <obj_property name="ElementShortName">b2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">b2[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/dataValid" type="logic">
-      <obj_property name="ElementShortName">dataValid</obj_property>
-      <obj_property name="ObjectShortName">dataValid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/shiftNo" type="array">
-      <obj_property name="ElementShortName">shiftNo[8:0]</obj_property>
-      <obj_property name="ObjectShortName">shiftNo[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/dataCounter" type="array">
-      <obj_property name="ElementShortName">dataCounter[16:0]</obj_property>
-      <obj_property name="ObjectShortName">dataCounter[16:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/inQuery" type="array">
-      <obj_property name="ElementShortName">inQuery[511:0]</obj_property>
-      <obj_property name="ObjectShortName">inQuery[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/LocationQ" type="array">
-      <obj_property name="ElementShortName">LocationQ[8:0]</obj_property>
-      <obj_property name="ObjectShortName">LocationQ[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/inDB" type="array">
-      <obj_property name="ElementShortName">inDB[511:0]</obj_property>
-      <obj_property name="ObjectShortName">inDB[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/load" type="logic">
-      <obj_property name="ElementShortName">load</obj_property>
-      <obj_property name="ObjectShortName">load</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/loadDone" type="logic">
-      <obj_property name="ElementShortName">loadDone</obj_property>
-      <obj_property name="ObjectShortName">loadDone</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/outAddress" type="array">
-      <obj_property name="ElementShortName">outAddress[31:0]</obj_property>
-      <obj_property name="ObjectShortName">outAddress[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/highestLocationStart" type="array">
-      <obj_property name="ElementShortName">highestLocationStart[31:0]</obj_property>
-      <obj_property name="ObjectShortName">highestLocationStart[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/highestLocationEnd" type="array">
-      <obj_property name="ElementShortName">highestLocationEnd[31:0]</obj_property>
-      <obj_property name="ObjectShortName">highestLocationEnd[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/maxScore" type="array">
-      <obj_property name="ElementShortName">maxScore[10:0]</obj_property>
-      <obj_property name="ObjectShortName">maxScore[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/stop" type="logic">
-      <obj_property name="ElementShortName">stop</obj_property>
-      <obj_property name="ObjectShortName">stop</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/processEnd" type="logic">
-      <obj_property name="ElementShortName">processEnd</obj_property>
-      <obj_property name="ObjectShortName">processEnd</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/shiftNumber" type="array">
-      <obj_property name="ElementShortName">shiftNumber[9:0]</obj_property>
-      <obj_property name="ObjectShortName">shiftNumber[9:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/dataSet1" type="array">
-      <obj_property name="ElementShortName">dataSet1[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dataSet1[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/dataSet2" type="array">
-      <obj_property name="ElementShortName">dataSet2[511:0]</obj_property>
-      <obj_property name="ObjectShortName">dataSet2[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/addressCalc" type="array">
-      <obj_property name="ElementShortName">addressCalc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">addressCalc[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/dataMerged" type="array">
-      <obj_property name="ElementShortName">dataMerged[1023:0]</obj_property>
-      <obj_property name="ObjectShortName">dataMerged[1023:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/Query" type="array">
-      <obj_property name="ElementShortName">Query[511:0]</obj_property>
-      <obj_property name="ObjectShortName">Query[511:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/state" type="array">
-      <obj_property name="ElementShortName">state[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/rst1" type="logic">
-      <obj_property name="ElementShortName">rst1</obj_property>
-      <obj_property name="ObjectShortName">rst1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/Score" type="array">
-      <obj_property name="ElementShortName">Score[10:0]</obj_property>
-      <obj_property name="ObjectShortName">Score[10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/locationStart" type="array">
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/locationStart" type="array">
       <obj_property name="ElementShortName">locationStart[31:0]</obj_property>
       <obj_property name="ObjectShortName">locationStart[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/locationEnd" type="array">
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/locationEnd" type="array">
       <obj_property name="ElementShortName">locationEnd[31:0]</obj_property>
       <obj_property name="ObjectShortName">locationEnd[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/range1" type="array">
-      <obj_property name="ElementShortName">range1[8:0]</obj_property>
-      <obj_property name="ObjectShortName">range1[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/range2" type="array">
-      <obj_property name="ElementShortName">range2[8:0]</obj_property>
-      <obj_property name="ObjectShortName">range2[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/rangeD" type="array">
-      <obj_property name="ElementShortName">rangeD[8:0]</obj_property>
-      <obj_property name="ObjectShortName">rangeD[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/k1" type="array">
-      <obj_property name="ElementShortName">k1[8:0]</obj_property>
-      <obj_property name="ObjectShortName">k1[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/k2" type="array">
-      <obj_property name="ElementShortName">k2[8:0]</obj_property>
-      <obj_property name="ObjectShortName">k2[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/i1" type="array">
-      <obj_property name="ElementShortName">i1[8:0]</obj_property>
-      <obj_property name="ObjectShortName">i1[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/i2" type="array">
-      <obj_property name="ElementShortName">i2[8:0]</obj_property>
-      <obj_property name="ObjectShortName">i2[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/m1" type="array">
-      <obj_property name="ElementShortName">m1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">m1[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/m2" type="array">
-      <obj_property name="ElementShortName">m2[9:0]</obj_property>
-      <obj_property name="ObjectShortName">m2[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/b1" type="array">
-      <obj_property name="ElementShortName">b1[1:0]</obj_property>
-      <obj_property name="ObjectShortName">b1[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/b2" type="array">
-      <obj_property name="ElementShortName">b2[1:0]</obj_property>
-      <obj_property name="ObjectShortName">b2[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/startCalc" type="logic">
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/startCalc" type="logic">
       <obj_property name="ElementShortName">startCalc</obj_property>
       <obj_property name="ObjectShortName">startCalc</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/IDLE" type="array">
-      <obj_property name="ElementShortName">IDLE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">IDLE[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/Score" type="array">
+      <obj_property name="ElementShortName">Score[10:0]</obj_property>
+      <obj_property name="ObjectShortName">Score[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/LOAD1" type="array">
-      <obj_property name="ElementShortName">LOAD1[2:0]</obj_property>
-      <obj_property name="ObjectShortName">LOAD1[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/theHighestScore" type="array">
+      <obj_property name="ElementShortName">theHighestScore[10:0]</obj_property>
+      <obj_property name="ObjectShortName">theHighestScore[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/LOAD2" type="array">
-      <obj_property name="ElementShortName">LOAD2[2:0]</obj_property>
-      <obj_property name="ObjectShortName">LOAD2[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/highestLocationStart" type="array">
+      <obj_property name="ElementShortName">highestLocationStart[31:0]</obj_property>
+      <obj_property name="ObjectShortName">highestLocationStart[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/EXPAND" type="array">
-      <obj_property name="ElementShortName">EXPAND[2:0]</obj_property>
-      <obj_property name="ObjectShortName">EXPAND[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/highestLocationEnd" type="array">
+      <obj_property name="ElementShortName">highestLocationEnd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">highestLocationEnd[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/WAIT" type="array">
-      <obj_property name="ElementShortName">WAIT[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/processEnd" type="logic">
+      <obj_property name="ElementShortName">processEnd</obj_property>
+      <obj_property name="ObjectShortName">processEnd</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/MERGE" type="array">
-      <obj_property name="ElementShortName">MERGE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">MERGE[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/highScore" type="array">
+      <obj_property name="ElementShortName">highScore[10:0]</obj_property>
+      <obj_property name="ObjectShortName">highScore[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tbTop/hbtop/memoryInt/Expand/WAIT_LOAD_DONE" type="array">
-      <obj_property name="ElementShortName">WAIT_LOAD_DONE[2:0]</obj_property>
-      <obj_property name="ObjectShortName">WAIT_LOAD_DONE[2:0]</obj_property>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/bigger" type="array">
+      <obj_property name="ElementShortName">bigger[4:0]</obj_property>
+      <obj_property name="ObjectShortName">bigger[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/command" type="array">
+      <obj_property name="ElementShortName">command[3:0]</obj_property>
+      <obj_property name="ObjectShortName">command[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/reg1" type="array">
+      <obj_property name="ElementShortName">reg1[74:0]</obj_property>
+      <obj_property name="ObjectShortName">reg1[74:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/reg2" type="array">
+      <obj_property name="ElementShortName">reg2[74:0]</obj_property>
+      <obj_property name="ObjectShortName">reg2[74:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/reg3" type="array">
+      <obj_property name="ElementShortName">reg3[74:0]</obj_property>
+      <obj_property name="ObjectShortName">reg3[74:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/reg4" type="array">
+      <obj_property name="ElementShortName">reg4[74:0]</obj_property>
+      <obj_property name="ObjectShortName">reg4[74:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/OutRam" type="array">
+      <obj_property name="ElementShortName">OutRam[4:0][74:0]</obj_property>
+      <obj_property name="ObjectShortName">OutRam[4:0][74:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/stop" type="logic">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/IDLE" type="logic">
+      <obj_property name="ElementShortName">IDLE</obj_property>
+      <obj_property name="ObjectShortName">IDLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/COMND" type="logic">
+      <obj_property name="ElementShortName">COMND</obj_property>
+      <obj_property name="ObjectShortName">COMND</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tbMem/MEmory/Expand/ScoreX/count" type="logic">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
    </wvobject>
 </wave_config>
