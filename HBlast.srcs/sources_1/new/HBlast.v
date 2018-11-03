@@ -224,7 +224,7 @@ wire ddr_meminf_rd_data_valid;
 
 
 assign ddr_user_clk = clk;
-assign reset_Intern = sys_rst | ~init_calib_complete;
+assign reset_Intern = ~sys_rst | ~init_calib_complete; // Seems to be ~sys_rst
 
 memInt memoryInt(
 .clk(clk),
