@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.24)  1 NOV 2018 16:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.6)  6 NOV 2018 13:37
 entering extended mode
 **./draft.tex
 (draft.tex
@@ -6,9 +6,9 @@ LaTeX2e <2018-04-01> patch level 5
 (llncs.cls
 Document Class: llncs 2018/03/10 v2.20 
  LaTeX document class for Lecture Notes in Computer Science
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -22,8 +22,8 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+) ("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\multicol.s
+ty"
 Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
 \c@tracingmulticols=\count88
 \mult@box=\box26
@@ -72,7 +72,8 @@ Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
 \colbreak@box=\box51
 \mc@col@check@num=\count96
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\aliascnt.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\aliascnt.
+sty"
 Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
 )
 \c@chapter=\count97
@@ -126,25 +127,30 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@remark=\count116
 \headlineindent=\dimen124
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+ics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
+x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen125
@@ -171,7 +177,9 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
- (C:\Users\marzh\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen127
@@ -184,31 +192,41 @@ LaTeX Font Info:    ... okay on input line 15.
 \MPnumerator=\count121
 \makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks20
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+)
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+rr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+y"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefin
+ekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetke
+ys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmd
+s.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluate
+x.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -217,11 +235,13 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexc
+mds.sty"
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+ty"
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -257,17 +277,313 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 (Sections/0abstract.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+
+("C:\Users\ayans\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
-) (Sections/1Introduction.tex) (Sections/Background_and_ReatedWork.tex)
-(Sections/ProposedArchitecture.tex) (Sections/ReslutsAndDiscussion.tex)
-(Sections/ConclusionAndFutureWork.tex) (draft.bbl) [1
+)
+(Sections/1Introduction.tex) (Sections/Background_and_ReatedWork.tex)
+(Sections/ProposedArchitecture.tex (Figures/BlastMachine.svg
+! Misplaced alignment tab character &.
+l.2 ...6px" viewBox="-0.5 -0.5 862 646" content="&
+                                                  lt;mxfile userAgent=&quot;...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-{C:/Users/marzh/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (draft.aux)
+! Misplaced alignment tab character &.
+l.2 ....5 862 646" content="&lt;mxfile userAgent=&
+                                                  quot;Mozilla/5.0 (Windows ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
+! Misplaced alignment tab character &.
+l.2 ...e Gecko) Chrome/70.0.3538.77 Safari/537.36&
+                                                  quot; version=&quot;9.3.2&...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 .../70.0.3538.77 Safari/537.36&quot; version=&
+                                                  quot;9.3.2&quot; editor=&q...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...77 Safari/537.36&quot; version=&quot;9.3.2&
+                                                  quot; editor=&quot;www.dra...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...36&quot; version=&quot;9.3.2&quot; editor=&
+                                                  quot;www.draw.io&quot; typ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...&quot;9.3.2&quot; editor=&quot;www.draw.io&
+                                                  quot; type=&quot;google&qu...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...quot; editor=&quot;www.draw.io&quot; type=&
+                                                  quot;google&quot;&gt;&lt;d...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...=&quot;www.draw.io&quot; type=&quot;google&
+                                                  quot;&gt;&lt;diagram id=&q...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...;www.draw.io&quot; type=&quot;google&quot;&
+                                                  gt;&lt;diagram id=&quot;1d...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ....draw.io&quot; type=&quot;google&quot;&gt;&
+                                                  lt;diagram id=&quot;1df1d2...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...type=&quot;google&quot;&gt;&lt;diagram id=&
+                                                  quot;1df1d292-c5a7-d9f4-50...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...&quot;1df1d292-c5a7-d9f4-5014-09360f3d7227&
+                                                  quot; name=&quot;Page-1&qu...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...92-c5a7-d9f4-5014-09360f3d7227&quot; name=&
+                                                  quot;Page-1&quot;&gt;7V1dd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...-5014-09360f3d7227&quot; name=&quot;Page-1&
+                                                  quot;&gt;7V1dd5s4E/41uSxHQ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...09360f3d7227&quot; name=&quot;Page-1&quot;&
+                                                  gt;7V1dd5s4E/41uSxHQkIfl2m...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...Z2pFhFcS9lw86FiiIO4yi1FsrLxbq7vos8P73i/w==&
+                                                  lt;/diagram&gt;&lt;/mxfile...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...6FiiIO4yi1FsrLxbq7vos8P73i/w==&lt;/diagram&
+                                                  gt;&lt;/mxfile&gt;"><defs>...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...IO4yi1FsrLxbq7vos8P73i/w==&lt;/diagram&gt;&
+                                                  lt;/mxfile&gt;"><defs><lin...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.2 ...bq7vos8P73i/w==&lt;/diagram&gt;&lt;/mxfile&
+                                                  gt;"><defs><linearGradient...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+)) (Sections/ReslutsAndDiscussion.tex
+Overfull \hbox (187.88702pt too wide) in paragraph at lines 1--1
+[]\OT1/cmr/m/n/10 <!DOCTYPE svg PUB-LIC "-//W3C//DTD SVG 1.1//EN" "http://www.w
+3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+ []
+
+
+Overfull \hbox (51.48862pt too wide) in paragraph at lines 1--1
+\OT1/cmr/m/n/10 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www
+.w3.org/1999/xlink"
+ []
+
+
+Overfull \hbox (0.79279pt too wide) in paragraph at lines 1--1
+\OT1/cmr/m/n/10 con-tent="lt;mxfile user-A-gent=quot;Mozilla/5.0 (Win-dows NT 1
+0.0; Win64; x64)
+ []
+
+
+Overfull \hbox (19.80786pt too wide) in paragraph at lines 1--1
+\OT1/cmr/m/n/10 Ap-pleWe-bKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Sa
+-fari/537.36quot;
+ []
+
+
+Overfull \hbox (52.21078pt too wide) in paragraph at lines 1--1
+\OT1/cmr/m/n/10 ver-sion=quot;9.3.2quot; ed-i-tor=quot;www.draw.ioquot; type=qu
+ot;googlequot;gt;lt;diagram
+ []
+
+
+Overfull \hbox (26844.70589pt too wide) in paragraph at lines 1--1
+\OT1/cmr/m/n/10 id=quot;1df1d292-c5a7-d9f4-5014-09360f3d7227quot; name=quot;Pag
+e-1quot;gt;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
+w86FiiIO4yi1FsrLxbq7vos8P73i/w==lt;/diagramgt;lt;/mxfilegt;"><defs><linearGradi
+ent
+ []
+
+) (Sections/ConclusionAndFutureWork.tex) (draft.bbl [1
+
+{C:/Users/ayans/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]) [2] (draft
+.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -276,27 +592,30 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1917 strings out of 492970
- 26658 string characters out of 3135854
- 95405 words of memory out of 3000000
+ 1923 strings out of 492970
+ 27913 string characters out of 3126594
+ 96405 words of memory out of 3000000
  5756 multiletter control sequences out of 15000+200000
  10518 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,274b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on draft.pdf (1 page, 126760 bytes).
+ 41i,8n,25p,62012b,229s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx9.pfb><C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/ayans/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/ayans/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ayan
+s/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr9.pfb><C:/Users/ayans/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ayans/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/ayans/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on draft.pdf (2 pages, 143489 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
