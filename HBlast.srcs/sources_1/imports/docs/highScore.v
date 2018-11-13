@@ -10,9 +10,21 @@ module highScore(
        input [31:0] locationEnd,
        input startCalc,
        output [10:0] Score, //??? ?????, ????? ???? ????? ??????
-       output [10:0] theHighestScore,
-       output [31:0] highestLocationStart,
-       output [31:0] highestLocationEnd,
+       output [10:0] theHighestScore1,
+       output [31:0] highestLocationStart1,
+       output [31:0] highestLocationEnd1,
+              output [10:0] theHighestScore2,
+       output [31:0] highestLocationStart2,
+       output [31:0] highestLocationEnd2,
+              output [10:0] theHighestScore3,
+       output [31:0] highestLocationStart3,
+       output [31:0] highestLocationEnd3,
+              output [10:0] theHighestScore4,
+       output [31:0] highestLocationStart4,
+       output [31:0] highestLocationEnd4,
+              output [10:0] theHighestScore5,
+       output [31:0] highestLocationStart5,
+       output [31:0] highestLocationEnd5,
        output reg processEnd
     );
 	 localparam IDLE = 1'b0,
@@ -32,9 +44,21 @@ module highScore(
     reg count =1;
     reg [74:0] OutRam [4:0];
     assign Score = highScore;
-    assign theHighestScore = OutRam[0][10:0];
-    assign highestLocationStart = OutRam[0][42:11];
-    assign highestLocationEnd = OutRam[0][74:43];
+    assign theHighestScore1 = OutRam[0][10:0];
+    assign highestLocationStart1 = OutRam[0][42:11];
+    assign highestLocationEnd1 = OutRam[0][74:43];
+    assign theHighestScore2 = OutRam[1][10:0];
+    assign highestLocationStart2 = OutRam[1][42:11];
+    assign highestLocationEnd2 = OutRam[1][74:43];
+    assign theHighestScore3 = OutRam[2][10:0];
+    assign highestLocationStart3 = OutRam[2][42:11];
+    assign highestLocationEnd3 = OutRam[2][74:43];
+    assign theHighestScore4 = OutRam[3][10:0];
+    assign highestLocationStart4 = OutRam[3][42:11];
+    assign highestLocationEnd4 = OutRam[3][74:43];
+    assign theHighestScore5 = OutRam[4][10:0];
+    assign highestLocationStart5 = OutRam[4][42:11];
+    assign highestLocationEnd5 = OutRam[4][74:43];
     
 always @(posedge clk)
 begin

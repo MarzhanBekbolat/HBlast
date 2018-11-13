@@ -15,12 +15,23 @@ input queryValid,
 //input rdNew,
 //output [12:0] maxScoreOut,
 //output [31:0] outAddress,
-output [31:0] locationStart,
-output [31:0] locationEnd,
-output [10:0] highestScore,
+output [31:0] locationStart1,
+output [31:0] locationEnd1,
+output [10:0] highestScore1,
+output [31:0] locationStart2,
+output [31:0] locationEnd2,
+output [10:0] highestScore2,
+output [31:0] locationStart3,
+output [31:0] locationEnd3,
+output [10:0] highestScore3,
+output [31:0] locationStart4,
+output [31:0] locationEnd4,
+output [10:0] highestScore4,
+output [31:0] locationStart5,
+output [31:0] locationEnd5,
+output [10:0] highestScore5,
 output processEnd
-    );
-    
+    ); 
  //From memory interface to expand
  reg [16:0] DataCounter; //???????????????????????????????
  reg [511:0] queryReg; //to write query
@@ -325,10 +336,23 @@ output processEnd
     .load(loadExpOut),
     .loadDone(loadDone),
     .outAddress(outAddress),
-    .highestLocationStart(locationStart),
-    .highestLocationEnd(locationEnd),
-    .maxScore(highestScore),
+    .hsStart1(locationStart1),
+    .hsnEnd1(locationEnd1),
+    .hs1(highestScore1),
+    .hsStart2(locationStart2),
+    .hsnEnd2(locationEnd2),
+    .hs2(highestScore2),
+    .hsStart3(locationStart3),
+    .hsnEnd3(locationEnd3),
+    .hs3(highestScore3),
+    .hsStart4(locationStart4),
+    .hsnEnd4(locationEnd4),
+    .hs4(highestScore4),
+    .hsStart5(locationStart5),
+    .hsnEnd5(locationEnd5),
+    .hs5(highestScore5),
     .stop(stop),
     .processEnd(processEnd)
             );
+           
 endmodule

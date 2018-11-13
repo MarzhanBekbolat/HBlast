@@ -139,16 +139,16 @@ input rst, //sys_rst_n?
 input [31:0] data,
 input [31:0] address,
 input dataValid,
+input readData,
+output [31:0] o_data,
+output read_data_valid,
+output processEnd,
 //input [511:0] rdata,
 //input arready,
 //input rvalid,
 //output [31:0] araddres,
 //output arvalid,
 //output after expansion
-output [31:0] locationStart,
-output [31:0] locationEnd,
-output [10:0] highestScore,
-output processEnd,
    // Inouts
    inout [7:0]                         ddr3_dq,
    inout [0:0]                        ddr3_dqs_n,
@@ -221,8 +221,21 @@ wire ddr_meminf_rd_ack;
 wire [27:0] meminf_ddr_rd_addr;
 wire [511:0] ddr_meminf_rd_data;
 wire ddr_meminf_rd_data_valid;
-
-
+wire [31:0] locationStart1;
+wire [31:0] locationEnd1;
+wire [10:0] highestScore1;
+wire [31:0] locationStart2;
+wire [31:0] locationEnd2;
+wire [10:0] highestScore2;
+wire [31:0] locationStart3;
+wire [31:0] locationEnd3;
+wire [10:0] highestScore3;
+wire [31:0] locationStart4;
+wire [31:0] locationEnd4;
+wire [10:0] highestScore4;
+wire [31:0] locationStart5;
+wire [31:0] locationEnd5;
+wire [10:0] highestScore5;
 assign ddr_user_clk = clk;
 assign reset_Intern = ~sys_rst | ~init_calib_complete; // Seems to be ~sys_rst
 
@@ -236,9 +249,21 @@ memInt memoryInt(
 .ddr_rd_data(ddr_meminf_rd_data),
 .query(querry),                   //Check later
 .queryValid(querryValid),
-.locationStart(locationStart),
-.locationEnd(locationEnd),
-.highestScore(highestScore),
+.locationStart1(locationStart1),
+.locationEnd1(locationEnd1),
+.highestScore1(highestScore1),
+.locationStart2(locationStart2),
+.locationEnd2(locationEnd2),
+.highestScore2(highestScore2),
+.locationStart3(locationStart3),
+.locationEnd3(locationEnd3),
+.highestScore3(highestScore3),
+.locationStart4(locationStart4),
+.locationEnd4(locationEnd4),
+.highestScore4(highestScore4),
+.locationStart5(locationStart5),
+.locationEnd5(locationEnd5),
+.highestScore5(highestScore5),
 .processEnd(processEnd)
 );
 
@@ -248,14 +273,35 @@ wire [63:0] dbWrData;
     .clk(clk),
     .data(data),
     .address(address),
+    .o_data(o_data),
+    .readData(readData),
+    .readDataValid(read_data_valid),
     .dataValid(dataValid),
     .querry(querry),
     .querryValid(querryValid),
     .dBData(dbWrData),
     .dBDataWrEn(dbWrEn),
-    .dBDataWrAck(dbWrAck)
-     );       
-              
+    .dBDataWrAck(dbWrAck),
+    .locationStart1(locationStart1),
+    .locationEnd1(locationEnd1),
+    .highestScore1(highestScore1),
+    .locationStart2(locationStart2),
+    .locationEnd2(locationEnd2),
+    .highestScore2(highestScore2),
+    .locationStart3(locationStart3),
+    .locationEnd3(locationEnd3),
+    .highestScore3(highestScore3),
+    .locationStart4(locationStart4),
+    .locationEnd4(locationEnd4),
+    .highestScore4(highestScore4),
+    .locationStart5(locationStart5),
+    .locationEnd5(locationEnd5),
+    .highestScore5(highestScore5),
+    .i_processEnd(processEnd)
+     ); 
+     
+     
+         
     // Start of User Design top instance
     //***************************************************************************
     // The User design is instantiated below. The memory interface ports are

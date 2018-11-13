@@ -466,6 +466,9 @@ reg [31:0] address;
 reg [31:0] data;
 wire [10:0] highestScore;
 wire processEnd;
+wire readDataValid;
+reg readData;
+wire [31:0] o_readData;
   
   HBlast #
     (
@@ -524,8 +527,10 @@ wire processEnd;
       .data(data),
       .address(address),
       .dataValid(dataValid),
-      .processEnd(processEnd),
-      .highestScore(highestScore)
+      .readData(readData),
+      .o_data(o_readData),
+      .read_data_valid(readDataValid),
+      .processEnd(processEnd)
      );
 
   //**************************************************************************//
@@ -689,13 +694,17 @@ wire processEnd;
      query[16] = {32{1'b0}}; 
   end
     
+reg start;    
+    
 initial
 begin
+    start <= 0;
 	wait(init_calib_complete);
 	$display("DDR link-up");
 	#50000;
 	wrDB();
 	wrQuerry();
+	start <= 1;
 end
 
 
@@ -745,13 +754,41 @@ begin
 end
 endtask
 
-always @(clk)
+initial
 begin
-    if(processEnd)
-    begin
-        $display("Process ended");
-        $display("Highest score %d",highestScore);
-    end
+      wait(start);
+      @(posedge clk);
+      readData <= 1'b1;
+      address <= 0;
+      wait(readDataValid & o_readData[0] == 1);
+      $display("Process ended");
+      readData <= 1'b0;
+      @(posedge clk);
+      address <= 4;
+      readData <= 1'b1;
+      wait(readDataValid);
+      readData <= 1'b0;
+      $display("Highest score 1 %d",o_readData);
+      address <= 16;
+      readData <= 1'b1;
+      wait(readDataValid);
+      readData <= 1'b0;
+      $display("Highest score 2 %d",o_readData);
+      address <= 28;
+      readData <= 1'b1;
+      wait(readDataValid);
+      readData <= 1'b0;
+      $display("Highest score 3 %d",o_readData);
+      address <= 40;
+      readData <= 1'b1;
+      wait(readDataValid);
+      readData <= 1'b0;
+      $display("Highest score 4 %d",o_readData);
+      address <= 52;
+      readData <= 1'b1;
+      wait(readDataValid);
+      readData <= 1'b0;
+      $display("Highest score 5 %d",o_readData);
 end
     
 endmodule
