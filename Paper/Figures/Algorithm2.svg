@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="110.03265mm"
+   height="39.90966mm"
+   viewBox="0 0 110.03263 39.909661"
    version="1.1"
    id="svg1894"
    sodipodi:docname="Algorithm2.svg"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="316.1521"
-     inkscape:cy="844.61024"
+     inkscape:cx="118.12672"
+     inkscape:cy="87.03415"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -38,7 +38,9 @@
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
-       id="grid3045" />
+       id="grid3045"
+       originx="-30.411278"
+       originy="-200.44203" />
   </sodipodi:namedview>
   <metadata
      id="metadata1891">
@@ -55,7 +57,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-30.411296,-56.648333)">
     <rect
        style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:0.12429083;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect815"
@@ -514,7 +517,7 @@
          style="font-size:4.02266407px;stroke-width:0.15084991">A</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="43.65625"
        y="76.072914"
        id="text3288"><tspan
@@ -522,7 +525,7 @@
          id="tspan3286"
          x="43.65625"
          y="76.072914"
-         style="stroke-width:0.26458332;font-size:3.52777778px;">..........</tspan></text>
+         style="font-size:3.52777767px;stroke-width:0.26458332">..........</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -561,39 +564,39 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="37.776997"
-       y="70.286667"
+       x="35.371574"
+       y="70.55394"
        id="text3332"><tspan
          sodipodi:role="line"
          id="tspan3330"
-         x="37.776997"
-         y="70.286667"
+         x="35.371574"
+         y="70.55394"
          style="font-size:3.52777767px;stroke-width:0.26458332">Database </tspan><tspan
          sodipodi:role="line"
-         x="37.776997"
-         y="74.696388"
+         x="35.371574"
+         y="74.963661"
          style="font-size:3.52777767px;stroke-width:0.26458332"
          id="tspan3334"> Stream</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="40.369446"
-       y="84.317642"
+       x="48.6548"
+       y="84.451271"
        id="text3332-9"><tspan
          sodipodi:role="line"
-         x="40.369446"
-         y="84.317642"
+         x="48.6548"
+         y="84.451271"
          style="font-size:3.52777767px;stroke-width:0.26458332"
          id="tspan3334-7">Query</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="82.542618"
-       y="96.491158"
+       x="82.943527"
+       y="92.348473"
        id="text3332-4"><tspan
          sodipodi:role="line"
-         x="82.542618"
-         y="96.491158"
+         x="82.943527"
+         y="92.348473"
          style="font-size:3.52777767px;stroke-width:0.26458332"
          id="tspan3334-4">HIT </tspan></text>
     <text

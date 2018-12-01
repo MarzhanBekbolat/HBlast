@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="149.59955mm"
+   height="152.2699mm"
+   viewBox="0 0 149.59955 152.2699"
    version="1.1"
    id="svg3486"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -21,30 +21,32 @@
     <marker
        inkscape:stockid="Arrow1Lend"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Lend"
-       style="overflow:visible;"
+       style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path3170"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Lstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Lstart"
        style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path3167"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         transform="scale(0.8) translate(12.5,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Lstart"
@@ -145,8 +147,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="201.50248"
-     inkscape:cy="737.21149"
+     inkscape:cx="-55.314532"
+     inkscape:cy="331.26416"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -157,7 +159,9 @@
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
-       id="grid4031" />
+       id="grid4031"
+       originx="-23.983665"
+       originy="-107.40689" />
   </sodipodi:namedview>
   <metadata
      id="metadata3483">
@@ -167,14 +171,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-23.983664,-37.323202)">
     <rect
        style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:0.12429083;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect815"
@@ -1348,7 +1353,7 @@
          id="tspan3334-4-1">Mismatch</tspan><tspan
          sodipodi:role="line"
          x="78.321007"
-         y="109.76759"
+         y="109.76758"
          style="font-size:3.52777767px;stroke-width:0.26458332"
          id="tspan4215-7">     -4 </tspan></text>
     <text
@@ -1930,7 +1935,7 @@
          style="font-size:3.52777767px;stroke-width:0.26458332">Database </tspan><tspan
          sodipodi:role="line"
          x="55.239479"
-         y="125.76096"
+         y="125.76095"
          style="font-size:3.52777767px;stroke-width:0.26458332"
          id="tspan3334-8-6"> Stream</tspan></text>
     <text
