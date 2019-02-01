@@ -1,5 +1,20 @@
 \section{Proposed architechture}
-\label{sec:introduction}
+\label{sec:propesedArch}
+
+   The HBlast architecture, proposed in this paper, was designed for small query (512-bit = 256 letter) but for large sized data base (4GB).  First, data base sequence will be saved in DDR (double data rate) SDRAM and query sequence will be saved in register \textit{queryReg}. Then the actual alignment operation will start. 
+
+The two main blocks of the HBlast architecture are \textit{Hit} and \textit{Expand}, while \textit{Memory Interface} acts as a control logic for them, refer to \ref{fig:blastArch}. As their name states these blocks are responsible for tasks like finding hit (match), for expanding the sequence and for linking blocks. 
+
+For the nucleotide w-mer size is 11 letters, so by Eq. x there are 246 w-mers in 256-letter query. Each of them must be compared with one w-mer of the data base.  Comparison of one data base and one query w-mer at a time is not effective in terms of timing. In HBlast architecture this operation is parallelized by introducing 246 comparators (one for each query w-mer). All comparators have one common input: 22-bit (11-letter) database w-mer. This input is controlled by \textit{Database Shift Register}, which perform 2-bit shift after each iteration. The expansion will start if output of any of these comparators is high. 
+\begin{figure}
+\includegraphics[width=\textwidth]{Figures/BlastMachine.pdf}
+\caption{Proposed Architecture / HBlast machine.} \label{fig:blastArch}
+\end{figure}
+
+The expansion and hit are sequential operations not parallel, means that expansion will start only if hit stops and other way around.  After hit operation finishes it will sent information about where in query there is a match and how many times a shift operation was performed.  The loading the data from memory interface is controlled by signal load. How many times to change the signal’s state (low or high) is decided by examining \textit{shiftNumber}. Maximum there can be two read operations for one iteration. Each time the read data will be saved in 512-bit \textit{Database} registers and then merged into 1024-bit register, \textit{MergedDatabase}. Then the expansion will go, according to the logic described in ExpandFSM section. 
+At the same time the block \textit{High Score Calculator} will calculate the match score and keep track of the five highest scores (with their location in database and query).    
+
+
 
 \subsection{Hit.v}
 Hit.v is one of the essential modules in proposed architecture that is aimed to compare a W-mer from a database with W-mers in query in parallel and find exact match. The module is a finite state machine (FSM) of two states. In Idle state, the module takes 22 bits of sequence from the database and compares the W-mer with each W-mer from the query sequence via 246 comparators. Parallel architecture of FPGA allows performing the task in parallel, which significantly improves timing. Then, if at least one exact match is detected, the signal hit is received and the process passes to next state. It stays in this state while expansion process is being performed. When expansion is over, the process again goes to Idle state and verifies if there were another matches of the W-mer within the query. If yes, aforementioned process is repeated, if no, the loaded 512 bits of database is shifted by 2 bits and next 22 bits of sequence in database are gone through all the processes described above. When all W-mers in the database are completed being compared, then next 512 bits of the database are loaded and process is iterated. 
