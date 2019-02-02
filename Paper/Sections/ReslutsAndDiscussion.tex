@@ -1,9 +1,16 @@
 \section{Discussion and Analysis}
-\label{sec:introduction}
+\label{sec:discussion}
 
-In paper \cite{vipin2019}
+\quad In this section we discuss the implementation details of the HBlast architecture on FPGA. Detailed reconfiguration performance numbers are reported. 
+
+\subsection{Implementation}
+\quad Xilinx ISE was used for implementation. The proposed platform was implemented and hardware validated on a Xilinx VC709 evaluation board containing a Virtex-7 XC7VX690T-2FFG1761C FPGA. The static and reconfigurable regions on the FPGA are shown in \textit{Fig.\ref{fig:regions}}. 
+\\
+
+Resource utilization is shown in \textit{Table \ref{tab:title}}. On the Virtex-7 FPGA the platform consumes about \% of logic and BRAM utilization is about \%.
 
 \begin{table}[]
+\caption {Table Title} \label{tab:title}
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 FPGA module        & Slice LUTs & Slice Regs & F7 Muxes & F8 Muxes & Block RAM Tile & Bonded IOB \\ \hline
@@ -14,7 +21,33 @@ Expand             & 2342       & 2410       & 282      & 113      & 0          
 hitMem             & 2958       & 808        & 32       & 16       & 0              & 0          \\
 queryB             & 39         & 612        & 0        & 0        & 0              & 0          \\
 u\_mig\_7series\_0 & 6002       & 4676       & 48       & 2        & 1              & 0          \\ \hline
+
 \end{tabular}
 \end{table}
 
-\todo[inline]{Add results}
+
+\begin{table}[]
+\begin{center}
+\caption {Table Title} \label{tab:title2}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Resource & Estimation & Available & Utiliztion \% \\ \hline
+LUT      & 5428       & 433200    & 1.25          \\
+FF       & 6062       & 866400    & 0.70          \\
+IO       & 104        & 850       & 12.24         \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\begin{table}[]
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Total slack, ns & Required time, ns & Arrival time, ns & Maximum frequency, MHz \\ \hline
+1.963           & 5.000             & -3.037           & 143.6                  \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+

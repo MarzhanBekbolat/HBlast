@@ -58,17 +58,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.76126778"
-     inkscape:cx="-840.1447"
-     inkscape:cy="685.68074"
+     inkscape:zoom="0.38063389"
+     inkscape:cx="-1100.7808"
+     inkscape:cy="996.59521"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      showborder="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true" />
@@ -109,7 +109,8 @@
          sodipodi:role="line"
          id="tspan12747"
          x="-138.71797"
-         y="112.8733">HITLOW</tspan></text>
+         y="112.8733"
+         style="-inkscape-font-specification:'sans-serif Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal">HITLOW</tspan></text>
     <a
        id="a979-88"
        transform="matrix(1.8280774,0,0,1.7597218,-488.7878,-198.90945)">
@@ -124,14 +125,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.51570612"
-       x="-376.95245"
+       x="-380.65814"
        y="112.8733"
        id="text924-9-2"
        transform="scale(0.93789609,1.0662162)"><tspan
          sodipodi:role="line"
          id="tspan12743"
-         x="-376.95245"
-         y="112.8733">IDLE</tspan></text>
+         x="-380.65814"
+         y="112.8733"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'">IDLE</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.99186599;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6664-9-6)"
        d="M -115.43713,77.668457 C -233.96761,-10.42113 -338.22646,74.150461 -342.09681,79.105402"
@@ -144,5 +146,69 @@
        id="path6642-8-0-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
-  </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.51570612"
+       x="-265.70441"
+       y="27.936152"
+       id="text924-9-2-2"
+       transform="scale(0.93789609,1.0662162)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.51570612"
+         sodipodi:role="line"
+         id="tspan12743-5"
+         x="-265.70441"
+         y="27.936152">hit = 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-248.85023"
+       y="214.62918"
+       id="text873"><tspan
+         sodipodi:role="line"
+         id="tspan871"
+         x="-248.85023"
+         y="224.28468"
+         style="stroke-width:0.26458332" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-298.89832"
+       y="214.97673"
+       id="text877"><tspan
+         sodipodi:role="line"
+         id="tspan875"
+         x="-298.89832"
+         y="214.97673"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.26458332">stop = 1 or k = 246</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot879"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion881"><rect
+           id="rect883"
+           width="655.48553"
+           height="101.14706"
+           x="-978.63068"
+           y="771.78894" /></flowRegion><flowPara
+         id="flowPara885" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot887"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion889"><rect
+           id="rect891"
+           width="700.14783"
+           height="132.67342"
+           x="-994.39386"
+           y="756.02576" /></flowRegion><flowPara
+         id="flowPara893" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot852"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion854"><rect
+           id="rect856"
+           width="1668.2698"
+           height="940.53632"
+           x="-1571.0635"
+           y="-46.582729" /></flowRegion><flowPara
+         id="flowPara858"></flowPara></flowRoot>  </g>
 </svg>
