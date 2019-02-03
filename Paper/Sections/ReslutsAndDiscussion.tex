@@ -9,18 +9,18 @@
 
 Resource utilization is shown in \textit{Table \ref{tab:title}}. On the Virtex-7 FPGA the platform consumes about \% of logic and BRAM utilization is about \%.
 
-\begin{table}[]
+\begin{table}[!t]
 \caption {Table Title} \label{tab:title}
-\begin{tabular}{|l|l|l|l|l|l|l|}
+\begin{tabular}{l|l|l|l}
 \hline
-FPGA module        & Slice LUTs & Slice Regs & F7 Muxes & F8 Muxes & Block RAM Tile & Bonded IOB \\ \hline
-HBlast             & 11430      & 10738      & 362      & 131      & 1              & 143        \\
-bridge             & 68         & 641        & 0        & 0        & 0              & 0          \\
-memoryInt          & 5321       & 4809       & 314      & 129      & 0              & 0          \\
-Expand             & 2342       & 2410       & 282      & 113      & 0              & 0          \\
-hitMem             & 2958       & 808        & 32       & 16       & 0              & 0          \\
-queryB             & 39         & 612        & 0        & 0        & 0              & 0          \\
-u\_mig\_7series\_0 & 6002       & 4676       & 48       & 2        & 1              & 0          \\ \hline
+FPGA module        & Slice LUTs & Slice Regs & Block RAM Tile \\ \hline
+HBlast             & 11430      & 10738      & 1              \\
+bridge             & 68         & 641        & 0              \\
+memoryInt          & 5321       & 4809       & 0              \\
+Expand             & 2342       & 2410       & 0              \\
+hitMem             & 2958       & 808        & 0              \\
+queryB             & 39         & 612        & 0              \\
+u\_mig\_7series\_0 & 6002       & 4676       & 1              \\ \hline
 
 \end{tabular}
 \end{table}
