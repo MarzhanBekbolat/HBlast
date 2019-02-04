@@ -1,6 +1,9 @@
 \section{Background and Related Work}
 \label{sec:background}
 
+
+Software based implementation of BLAST algorithm developed by The National Center for Biotechnology Information (NCBI) \cite{ncbiBlast} is widely applied in sequence alignment. CPU based server technology is becoming inefficient with the vast growth in database size as well as enlargement of query sequences. There are several enhancements as two/hit method and gapped BLAST proposed by NCBI to handle with the growth of database and query sizes, and to reduce the computation time \cite{WIENBRANDT20111967}. Still, the software tool takes long runtime and techniques utilized for fast computation is not much useful for such tasks as comparison of several queries at a time. FPGAs which are able to provide a high degree of bit-level parallelism is suitable for tasks in bioinformatics.
+
 \quad FPGAs are applied in sequence comparison in Large Sequence Databanks for the reason that they significantly improve performance due to parallel architecture. There are number of proposed and applied implementations of BLAST algorithm on FPGA in order to address the issue of biological sequence alignment \cite{oliver2005hyper}. The following examples are the proposed hardware implementations of BLAST algorithm: Mercury BLASTn \cite{buhler2007mercury}, Mercury BLASTp \cite{harris2007banded}, Tree-BLAST \cite{herbordt2006single}, RC-BLAST \cite{datta2009}, FPGA/FLASH Accelerator \cite{lavenier2007reconfigurable} and Multiengine BLASTn Accelerator \cite{sotiriades2007design}. 
 \\
 

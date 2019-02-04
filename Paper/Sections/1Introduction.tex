@@ -7,8 +7,6 @@ These algorithms can lead to early disease diagnosis, where the biological infor
 However, sequence alignment algorithms are highly compute intensive~\cite{datta2009}. 
 This calls for powerful servers for running the software tools and will be beyond the capabilities of small hospitals and research centres.
 Even on high performance computers, often the time required by pure software implementations can vary from several minutes to hours~\cite{masato2016}.  
-\\
-Software based implementation of BLAST algorithm developed by The National Center for Biotechnology Information (NCBI) \cite{ncbiBlast} is widely applied in sequence alignment. CPU based server technology is becoming inefficient with the vast growth in database size as well as enlargement of query sequences. There are several enhancements as two/hit method and gapped BLAST proposed by NCBI to handle with the growth of database and query sizes, and to reduce the computation time \cite{WIENBRANDT20111967}. Still, the software tool takes long runtime and techniques utilized for fast computation is not much useful for such tasks as comparison of several queries at a time. FPGAs which are able to provide a high degree of bit-level parallelism is suitable for tasks in bioinformatics.
 
 In recent years, Field Programmable Gate Arrays~(FPGAs) have been proposed as a platform for accelerating bioinformatic applications~\cite{kasap2008design}. 
 FPGA-based solutions have several advantages over pure software implementations for such compute-intensive applications.
