@@ -1,8 +1,8 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Biological sequence alignment search algorithms are widely used in Bioinformatics and Computational biology (BCB), where an unknown DNA sequence is searched against sequences from a large database. 
-The algorithm works by identifying the degree of similarity of a newly discovered biological sequence with already known sequences~\cite{kasap2008design}.
+Biological sequence alignment algorithms are widely used in Bioinformatics and Computational biology (BCB), where an unknown DNA sequence is searched against sequences from a large database. 
+The algorithm works by identifying the degree of similarity between a newly discovered biological sequence with already known sequences~\cite{kasap2008design}.
 These algorithms can lead to early disease diagnosis, where the biological information of a newly discovered infectant (virus or bacteria) DNA sequence can be obtained by matching it with the most similar disease genes in the database \cite{guo2012systolic}. 
 However, sequence alignment algorithms are highly compute intensive~\cite{datta2009}. 
 This calls for powerful servers for the running the software tools and will be beyond the capabilities of small hospitals and research centres.
@@ -12,19 +12,19 @@ In recent years, Field Programmable Gate Arrays~(FPGAs) have been proposed as a 
 FPGA-based solutions have several advantages over pure software implementations for such compute-intensive applications.
 The hardware flexibility of FPGA architecture enables highly efficient operations at narrow bit-widths compared to fixed register size of traditional processors \cite{cug2007}. 
 Secondly, FPGA power consumption is significantly lower (up to 4$\times$) compared to CPUs~\cite{cug2007}. 
-Moreover, reprogrammability of FPGAs enables them to time-multiplex different accelerator applications or even time multiplex portions of the same algorithm to fit in a smaller device. 
-The reprogrammability also make them attractive compared to other more expensive hardware implementation such as ASIC~\cite{cug2007}. 
+Moreover, reprogrammability of FPGAs enables them to time-multiplex different accelerator applications or even portions of the same algorithm to fit in a smaller device. 
+The reprogrammability also makes them attractive compared to other more expensive hardware implementation such as ASICs. 
 
 The efficiency of the search algorithm is essential, and probably is even more important than the hardware it runs on. 
 There are various biological sequence alignment techniques developed over the past decades~\cite{mohd2013}. 
 Basic Local Alignment Search Tool~(BLAST) is one of the widely used heuristic methodologies, which delivers the best local alignment for large size of data sets. 
 Due to its heuristic nature, BLAST is much faster than dynamic programming algorithms such as Needleman-Wunsch and Smith-Waterman algorithms \cite{wien2011blastp}. 
-Although, BLAST has been proved to meet the performance and search sensitivity criteria, the improvements in DNA sequencing technologies rises new challenges for BLAST. 
-Statistics imply that the number of genomic sequences is doubling almost every year, and as a consequence, even algorithms like BLAST cannot remain efficient to meet new requirements \cite{wien2011blastp}. 
+Although BLAST has been proved to meet the performance and search sensitivity criteria, the improvements in DNA sequencing technologies rises new challenges for BLAST. 
+Statistics imply that the number of genomic sequences is doubling almost every year, and as a consequence, even algorithms like BLAST may not remain efficient to meet new requirements \cite{wien2011blastp}. 
 
 We propose an FPGA-based implementation of BLAST algorithm called HBlast, where the DNA search alignment is improved by parallel processing. 
-This work is a part of a larger project, which develops a library of hardware accelerators targeting cloud-based FPGA instances.
-The accelerators will be provided in the public domain, which enables hospitals and research centres with limited computing facilities to achieve hardware acceleration by hosting these accelerators on the cloud infrastructure such as Amazon AWS FPGA instances~\cite{}.
+This work is part of a larger project, which develops a library of hardware accelerators targeting cloud-based FPGA instances.
+The accelerators will be provided in the public domain, which enables hospitals and research centres with limited computing facilities to achieve hardware acceleration by hosting these accelerators on the cloud infrastructure such as Amazon AWS FPGA instances~\cite{aws2018}.
 Since the cloud billing model is based on usage and instance types, organizations can obtain their solution faster within the budget constraints.
 Accelerators could be also used in on-premises FPGA instances since a communication infrastructure for interfacing the accelerators with standard PCIe and DRAM interfaces is also provided.
 
