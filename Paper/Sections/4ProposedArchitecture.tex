@@ -1,26 +1,44 @@
 \section{Proposed architechture}
 \label{sec:propesedArch}
 
-\begin{figure}[h!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{Figures/sysArch.pdf}
 \caption{Overall architecture of HBlast targeting on-premise FPGA implementation} \label{fig:sysArch}
 \end{figure}
 
-The overall architecture of HBlast is as depicted in Fig.~\ref{fig:sysArch}.
+The overall architecture of HBlast library targeting on-premise implementation is as depicted in Fig.~\ref{fig:sysArch}.
 It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
-This board supports a PCIe x8 Gen.3 interface
-It consists of an IP core (Dyract) to interface with a host computer, a DRAM controller for interfacing with the external DDR memory and the module implementing the core BLAST algorithm.
+This board supports a PCIe x8 Gen.3 interface which theoretically gives upto 7.88 GB/s/direction bandwidth.
+It supports upto 8GB external DDR supporting upto 933MHz clock frequency.
+The implementation consists of an IP core (Dyract) to interface with a host computer, a DRAM controller for interfacing with the external DDR memory and the module implementing the core BLAST algorithm.
 Details of each sub-module is discussed in the subsequent sections.
 
+Our current implementation targets only DNA sequence searching which could be augmented with support for protein searching in the future.
+Since there are only 4 types of nucleobases encountered in DNA sequences (adenine (A), guanine (G) cytosine (C), and thymine (T)), only two bits are used to represent each base.
+This considerably reduces the memory requirement for storing the database compared to traditional character based storage since each character takes one byte of data.
+The entire database is initially stored in the external DRAM memory of the FPGA-board and the query sequences are stored in the internal memory of the FPGA.
+
 \subsection{PCIe Controller}
-We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA , DRAM memory controller and the neural network accelerator~\cite{blanked}.
+We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA with the host computer~\cite{Vipin2014}.
+The PCIe interface is used to send the database and querry strings to the FPGA as well as to receive back the HSPs.
+This interface is able to provide upto 6.5 GB/s throughput, nearly saturating the available PCIe bandwidth.
+The PCIe controller is interfaced with both the memory controller as well as the BLast core.
+Depending upon the stream type, it is sent either to the external DRAM or the internal registers of BLast core.
 
+Since the database needs to be stored only once in the external DRAM, the PCIe bandwidth is not critical to the overall performance of the system. Hence for systems which does not support PCIe, this interface could be replaced with low-bandwidth interfaces such as Ethernet or even serial.
 
+\subsection{DRAM Controller}
+The DRAM controller internally uses Xilinx memory interface generator (MIG) IP core~\cite{mig2018}. 
+Present implementation instantiates a single MIG controller thus supporting only 4GB external memory.
+The interface operates at 200MHz with 512-bit interface providing a maximum of 12.5 GB/s throughput.
+The throughput of the memory interface is very critical to the overall performance since the database sequences are continuously read from the external memory for comparing with the query sequence.
+
+\subsection{BHlast Core}
 
 \quad The HBlast architecture, proposed in this paper, was designed for small query (512-bit = 256 letter) but for large sized data base (4GB).  First, database sequence will be saved in double data rate(DDR) SDRAM and query sequence will be saved in register \textit{queryReg}. Then the actual alignment operation will start. 
    
-\begin{figure}[h!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{Figures/BlastMachine.pdf}
 \caption{Proposed Architecture / HBlast machine.} \label{fig:blastArch}
@@ -42,7 +60,7 @@ At the same time the block \textit{High Score Calculator} will calculate the mat
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\columnwidth]{Figures/hitFSM.pdf}
+\includegraphics[width=0.7\columnwidth]{Figures/hitFSM.pdf}
 \caption{FSM diagram for module Hit} \label{fig:hitFSM}
 \end{figure}
 
