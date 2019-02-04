@@ -1,6 +1,23 @@
 \section{Proposed architechture}
 \label{sec:propesedArch}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\columnwidth]{Figures/sysArch.pdf}
+\caption{Overall architecture of HBlast targeting on-premise FPGA implementation} \label{fig:sysArch}
+\end{figure}
+
+The overall architecture of HBlast is as depicted in Fig.~\ref{fig:sysArch}.
+It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
+This board supports a PCIe x8 Gen.3 interface
+It consists of an IP core (Dyract) to interface with a host computer, a DRAM controller for interfacing with the external DDR memory and the module implementing the core BLAST algorithm.
+Details of each sub-module is discussed in the subsequent sections.
+
+\subsection{PCIe Controller}
+We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA , DRAM memory controller and the neural network accelerator~\cite{blanked}.
+
+
+
 \quad The HBlast architecture, proposed in this paper, was designed for small query (512-bit = 256 letter) but for large sized data base (4GB).  First, database sequence will be saved in double data rate(DDR) SDRAM and query sequence will be saved in register \textit{queryReg}. Then the actual alignment operation will start. 
    
 \begin{figure}[h!]

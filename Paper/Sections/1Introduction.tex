@@ -15,12 +15,12 @@ Secondly, FPGA power consumption is significantly lower (up to 4$\times$) compar
 Moreover, reprogrammability of FPGAs enables them to time-multiplex different accelerator applications or even portions of the same algorithm to fit in a smaller device. 
 The reprogrammability also makes them attractive compared to other more expensive hardware implementation such as ASICs. 
 
-The efficiency of the search algorithm is essential, and probably is even more important than the hardware it runs on. 
+The efficiency of the search algorithm is essential, and probably as important as the hardware it runs on. 
 There are various biological sequence alignment techniques developed over the past decades~\cite{mohd2013}. 
 Basic Local Alignment Search Tool~(BLAST) is one of the widely used heuristic methodologies, which delivers the best local alignment for large size of data sets. 
 Due to its heuristic nature, BLAST is much faster than dynamic programming algorithms such as Needleman-Wunsch and Smith-Waterman algorithms \cite{wien2011blastp}. 
 Although BLAST has been proved to meet the performance and search sensitivity criteria, the improvements in DNA sequencing technologies rises new challenges for BLAST. 
-Statistics imply that the number of genomic sequences is doubling almost every year, and as a consequence, even algorithms like BLAST may not remain efficient to meet new requirements \cite{wien2011blastp}. 
+Statistics imply that the number of genomic sequences is doubling almost every year, and as a consequence hardware acceleration is essential to meet the new requirements \cite{wien2011blastp}. 
 
 We propose an FPGA-based implementation of BLAST algorithm called HBlast, where the DNA search alignment is improved by parallel processing. 
 This work is part of a larger project, which develops a library of hardware accelerators targeting cloud-based FPGA instances.

@@ -37,7 +37,7 @@ The substring ACG will be the first W-mer, CGT the second and so on.
 
 
 
-\subsection{Searching for the hit}
+\subsection{Searching for hits}
 After the query is divided and the list of W-mers is generated, the search for exact match between W-mers and database is conducted.
 W-mers are chosen and randomly compared with the portions of the database. 
 Every exact match found is recorded as a ``hit" and saved to process further in step 3 as shown in Fig.~\ref{fig:step2}. 
@@ -51,8 +51,8 @@ Every exact match found is recorded as a ``hit" and saved to process further in 
 
 
 \subsection{Expansion}
-After all hits are found, each W-mer is expanded locally to both directions (left and right) by single letter per direction at a time as shown in Fig.~\ref{fig:step3}. 
-The expansion holds until the scoring no longer gets improved.
+After sufficient number of hits are found, each W-mer with exact match is expanded locally to both directions (left and right) by single letter per direction at a time as shown in Fig.~\ref{fig:step3}. 
+The expansion continues until the scoring no longer gets improved.
 \begin{figure}[b!]
 \centering
 \includegraphics[width=\columnwidth]{Figures/Algorithm3.pdf}
@@ -60,8 +60,8 @@ The expansion holds until the scoring no longer gets improved.
 \end{figure}
 The scoring technique of the algorithm is based on the Point Accepted Mutations~(PAM) matrices, that are used to examine which amino-acid substitutions are biologically accepted~\cite{sotiriades2007design}. 
 However, due to the complexity of this technique, a simpler and biologically acceptable scoring method is generally used. 
-In the expansion stage, each new match will results in addition of 5 and any mismatch will lead to reduction of 4 as depicted in Fig.\ref{fig:step3}.
-The expansion cease when the score calculated after an expansion becomes less than the score before expansion.
+In the expansion stage, each new match will results in addition of 5 points to the score and any mismatch will lead to reduction of 4 from the score as depicted in Fig.\ref{fig:step3}.
+The expansion ceases when the score calculated after an expansion becomes less than the score before expansion.
 The substrings with maximum score are selected and are called HSPs.
 The HSPs and the correponding score are reported as the final output of the algorithm.
 
