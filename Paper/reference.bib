@@ -196,10 +196,31 @@
   year         = {2011},
 }
 
+@MastersThesis{guo2012open,
+  author = {Guo, Xinyu},
+  title  = {Design of a systolic array-based FPGA parallel architecture for the BLAST algorithm and its implementation},
+  school = {The University of Toledo},
+  year   = {2012},
+}
 @Electronic{ncbiBlast,
   author = {NCBI},
   title  = {{Basic Local Alignment Search Tool}},
   url    = {https://blast.ncbi.nlm.nih.gov/Blast.cgi},
+}
+
+@article{WIENBRANDT20111967,
+title = "Massively parallel FPGA-based implementation of BLASTp with the two-hit method",
+journal = "Procedia Computer Science",
+volume = "4",
+pages = "1967 - 1976",
+year = "2011",
+note = "Proceedings of the International Conference on Computational Science, ICCS 2011",
+issn = "1877-0509",
+doi = "https://doi.org/10.1016/j.procs.2011.04.215",
+url = "http://www.sciencedirect.com/science/article/pii/S1877050911002730",
+author = "Lars Wienbrandt and Stefan Baumgart and Jost Bissel and Florian Schatz and Manfred Schimmler",
+keywords = "BLASTp, FPGA, sequence alignment, protein database search, Swiss-Prot",
+abstract = "Protein database search requests are generally being performed using the BLASTp algorithm, introduced by NCBI [1]. Since it is computationally intensive, it becomes more and more ine_ective with today's growth of sequence database sizes. The needs for an e_cient parallel implementation arise. In this paper, we focus on a massive parallelization using the FPGA-based hardware architecture RIVYERA [2]. The aim is to reach speedups in orders of magnitude with a flexible implementation while saving energy costs compared to PC-based database search. We keep our implementation close to the structure published by Kasap et al. [3], [4] and include ideas from Sotiriades et al. [5] such that all parts of the algorithm are organized in components of a long pipeline. We also use the idea of the two-hit method [6] to keep the computational e_ort small. Besides the related work, we perform the very last step of the algorithm to produce a gapped alignment with the Needleman-Wunsch algorithm in software, only with the option of hardware processing after reconfiguration. This saves FPGA-resources and allows an even higher degree of parallelism."
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
