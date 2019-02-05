@@ -83,7 +83,7 @@ When all W-mers in the database are compared, the next 512 bits of the database 
 
 \subsection{Expansion}
 The Expansion Finite State Machine expands the exactly matched sequences of the database to both sides by comparing it with the query. 
-The outputs from this module  are the start and end locations of the expanded matching sequence and its high score. The FSM consists of 6 states as shown in Fig.~\ref{fig:expandFSM}.
+The outputs from this module are the start and end locations of the most matching five expanded sequences and their high scores. The FSM consists of 6 states as shown in Fig.~\ref{fig:expandFSM}.
 
 \begin{enumerate}
   \item \textbf{Idle}: The FSM stays in this state until it receives the \textit{start} signal signal from the \textit{hit} module.
@@ -100,6 +100,7 @@ If next 2 bits are matched 5 is added to the HSP score, otherwise 4 points are d
 Threshold value is chosen to be 200 bits, meaning that the sequence can be expanded to both sides by 200 bits each. 
 Accordingly, maximum HSP can be 1055. 
 The threshold value is set to 200 since the maximum query sequence size is 512-bits.
+The expansion is performed with all the matching W-mers of the query with the database. And as the final output the 5 sequences with the highest score, that is 5 most matching sequences of the query to database, is obtained with their positions as start and end locations in the database. However, the operation stops when the exact matching sequence with highest score of 1055 is detected, since there will be no need in other matchings.
        
 
 \begin{figure}[t!]
