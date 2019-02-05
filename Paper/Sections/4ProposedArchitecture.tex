@@ -3,14 +3,14 @@
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\columnwidth]{Figures/sysArch.pdf}
+\includegraphics[width=0.9\columnwidth]{Figures/sysArch.pdf}
 \caption{Overall architecture of HBlast targeting on-premise FPGA implementation} \label{fig:sysArch}
 \end{figure}
 
 The overall architecture of HBlast library targeting on-premise implementation is as depicted in Fig.~\ref{fig:sysArch}.
 It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
-This board supports a PCIe x8 Gen.3 interface which theoretically gives upto 7.88 GB/s/direction bandwidth.
-It supports upto 8GB external DDR supporting upto 933MHz clock frequency.
+This board supports a PCIe x8 Gen.3 interface which theoretically supports upto 7.88 GB/s/direction bandwidth.
+It has 8GB external DRAM, supporting upto 933MHz clock frequency.
 The implementation consists of an IP core (Dyract) to interface with a host computer, a DRAM controller for interfacing with the external DDR memory and the module implementing the core BLAST algorithm.
 Details of each sub-module is discussed in the subsequent sections.
 
@@ -21,12 +21,12 @@ The entire database is initially stored in the external DRAM memory of the FPGA-
 
 \subsection{PCIe Controller}
 We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA with the host computer~\cite{Vipin2014}.
-The PCIe interface is used to send the database and querry strings to the FPGA as well as to receive back the HSPs.
+The PCIe interface is used to send the database and querry strings to the FPGA as well as to receive back the HSPs and the corresponding scores.
 This interface is able to provide upto 6.5 GB/s throughput, nearly saturating the available PCIe bandwidth.
 The PCIe controller is interfaced with both the memory controller as well as the BLast core.
-Depending upon the stream type, it is sent either to the external DRAM or the internal registers of BLast core.
+Depending upon the stream type, data is sent either to the external DRAM or the internal registers of BLast core through a bridge logic.
 
-Since the database needs to be stored only once in the external DRAM, the PCIe bandwidth is not critical to the overall performance of the system. Hence for systems which does not support PCIe, this interface could be replaced with low-bandwidth interfaces such as Ethernet or even serial.
+Since the database needs to be stored only once in the external DRAM, the PCIe bandwidth is not critical to the overall performance of the system. Hence for systems which do not support PCIe, this interface could be replaced with low-bandwidth interfaces such as Ethernet or even serial.
 
 \subsection{DRAM Controller}
 The DRAM controller internally uses Xilinx memory interface generator (MIG) IP core~\cite{mig2018}. 
@@ -40,36 +40,34 @@ Multiple levels of pipelining is implemented to support the required memory cloc
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{Figures/BlastMachine.pdf}
-\caption{Proposed Architecture / HBlast machine.} \label{fig:blastArch}
+\caption{Detailed architecture of the HBlast core module showing the Hit and Expansion submodule and their interconnection} \label{fig:blastArch}
 \end{figure}
 
 This module implements the core BLAST algorithm discussed in Section~\ref{sec:blast}.
 For the current implementation, the maximum query size supported is 512bits~(256 bases) with upto 4GB database. 
-This can be easily extended to larger size instantiating more number of basic compute units.
+This can be extended to larger size by instantiating more number of basic compute units.
 The database is stored in the external DRAM memory and the query sequence is stored in the internal \textit{queryReg} register.
-The two main sub-modules of the HBlast core are the \textit{Hit} and \textit{Expansion} modules as shown in FIg.~\ref{fig:blastArch}. As their names state, these blocks are responsible for tasks like finding hit (match), expanding the sequence and linking blocks. 
+The two main sub-modules of the HBlast core are the \textit{Hit} and \textit{Expansion} modules as shown in Fig.~\ref{fig:blastArch}. As their names state, these blocks are responsible for tasks like finding hit (match), expanding the sequence and linking blocks. 
 
-For the nucleotides, W-mer size is 11 letters, so by \textit{Eq.\ref{eq1}} there are 246 W-mers in 256-letter query. 
+For the nucleotides, W-mer size is 11 letters~\cite{kasap2008design}, so by \textit{Eq.\ref{eq1}} there are 246 W-mers in 256-letter query. 
 Each of them must be compared with each W-mer of the database.  
 Comparison between one database and one query W-mer at a time is not effective in terms of latency. 
 In HBlast architecture this operation is parallelized by introducing 246 comparators (one for each query W-mer). 
 All comparators have common 22-bit (11-letter) database W-mer fetched from external memory. 
-This input is controlled by \textit{Database Shift Register}, which perform 2-bit shift after each clock cycle. 
+This input is controlled by the \textit{Database Shift Register}, which performs a 2-bit shift operation after every clock cycle. 
 The expansion module will be activated if output of any of these comparators is high, indicating a valid match has been found between the database and the query. 
 
-The expansion and hit are sequential operations and not parallel, meaning that the expansion will start only if the hit stops and other way around. 
-A single expansion block is used to restrict the FPGA resource utilization.
-Once a valid match is found, the hit module sends information regarding the location of the match in the query and the number of performed shift operations. Loading the data from memory interface is controlled by signal \textit{load}. The number of state changes of the signal (low or high) is then decided by examining \textit{shiftNumber}. There can be at most two read operations for one iteration. Each time the read data will be saved in 512-bit \textit{Database} register and then merged into 1024-bit register, \textit{MergedDatabase}. Then the expansion will work by the logic described in the following \textit{Expand Finite State Machine} section. 
-At the same time the block \textit{High Score Calculator} will calculate the match score and keep track of the five HSP (with their location in database and query).    
-
-
-
+The expansion and hit are sequential operations, meaning the expansion will start only if the hit stops and other way around. 
+A single expansion block is used to restrict the FPGA resource utilization and thus to improve the clock performance.
+Once a valid match is found, the hit module sends information regarding the location of the match in the query and the number of performed shift operations to the expand module. 
+  
 \subsection{Hit}
-Hit module compares W-mers from the database with W-mers in query in parallel to find exact matches. The module implements a finite state machine (FSM) with two states as shown in Fig.\ref{fig:hitFSM}. 
-In the Idle state, the module takes 22 bits of sequence from the database and compares the W-mer with each W-mer from the query sequence via 246 comparators. 
-Parallel architecture of FPGA allows performing the task simultaneously, which significantly improves latency. 
+Hit module compares W-mers from the database with W-mers in query in parallel to find exact matches. 
+The module implements a finite state machine (FSM) with two states as shown in Fig.\ref{fig:hitFSM}. 
+In the Idle state, the module takes a 22-bit sequence from the database and compares each W-mer with the corresponding W-mers in the query sequence via 246 comparators. 
+Due to the parallel architecture, the comparisons happen in parallel which significantly improves the latency. 
 If at least one exact match is detected, the signal \textit{hit} is activated and the process passes to the next state, (\textit{HitLow}).
-It stays in this state while expansion process is being performed. When expansion is over, the FSM goes back to the \textit{Idle state} and verifies if there are other matches of the W-mer within the query. 
+It stays in this state while expansion process is being performed. When expansion is over, the FSM goes back to the \textit{Idle state} and verifies if there are other matches of the W-mers within the query. 
 If there is a match again, the expansion process will be repeated, if there is no more match found, the loaded 512 bits of database is shifted by 2 bits and next 22 bits of sequence in database are compared with the query. 
 When all W-mers in the database are compared, the next 512 bits of the database are loaded from the external memory and process is repeated. 
 
