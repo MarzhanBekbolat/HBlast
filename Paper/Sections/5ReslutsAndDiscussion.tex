@@ -72,4 +72,33 @@ Total slack, ns & Required time, ns & Arrival time, ns & Maximum frequency, MHz 
 \end{table}
 
 
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel=Exact Match Start Position $(n-1)\times 512$,
+		ylabel=Latency $ms$,
+		title=Latencs vs match position]
+	\addplot[color=blue,mark=x] coordinates {
+		(1,6.52)
+		(2,8.617)
+		(3,8.625)
+		(4,8.632)
+		(5,8.64)
+		(6,8.70)
+	};
+	\end{axis}
+\end{tikzpicture}
 
+
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel=Number of hits before match,
+		ylabel=Latency $ms$,
+		title=Latencs vs hit number]
+	\addplot[color=blue,mark=x] coordinates {
+		(50,6.652)
+		(100,9.082)
+		(150,9.12)
+		(200,9.24)
+	};
+	\end{axis}
+\end{tikzpicture}
