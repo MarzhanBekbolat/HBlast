@@ -2,18 +2,50 @@
 \label{sec:background}
 
 
-\quad Software based implementation of BLAST algorithm developed by The National Center for Biotechnology Information (NCBI) \cite{ncbiBlast} is widely applied in sequence alignment. However, CPU based server technology is becoming inefficient due to the vast growth in database size as well as enlargement of query sequences. There are several enhancements to improve that efficiency such as two-hit method and Gapped BLAST proposed by NCBI. Those techniques are created to operate with the large database and query sizes, and to reduce the computation time \cite{WIENBRANDT20111967}. In spite of enhancements, the software tool still takes long runtime and techniques utilized for fast computation is not much useful for certain tasks as comparison of several queries simultaneously. Thus, FPGAs are suitable for tasks in bioinformatics, since they to provide a high degree of bit-level parallelism.
+Presently the most popular BLAST implementation is that of the The National Center for Biotechnology Information (NCBI)~\cite{ncbiBlast}, which runs on the NCBI servers.
+However, CPU based server technology is becoming insufficient in meeting the performance requirement due to the rapid growth in database size as well as query sequences.
+NCBI has proposed a number of solutions to improve the efficiency of software implementation such as the two-hit method and the Gapped BLAST~\cite{WIENBRANDT20111967}.
+In spite of enhancements, the software tool still takes long run-time and techniques utilized for fast computation is not much useful for certain tasks such as comparison of several queries simultaneously. 
+Hardware accelerators have high potential in this regard, since they can provide a high degree of bit-level parallelism.
 
-Indeed, FPGAs are applied in sequence comparison in Large Sequence Databanks for the reason that they significantly improve performance due to parallel architecture. There is number of proposed and applied implementations of BLAST algorithm on FPGA in order to address the issue of biological sequence alignment \cite{oliver2005hyper}. Almost all of the implementations are based on one of the two searching strategies. These stargetiges are (1) Word Position Record Based Search (WPRBS) and Systolic array \cite{guo2012systolic}. The latter is a relatively new method and not a widely used technique for implementation of BLAST algorithm. The most of the following implementations are based on WPRBS and the last one implementation is based on Systolic arrays.
+FPGAs are utilized in sequence comparison in Large Sequence Databanks since they significantly improve performance due to their parallel architecture. 
+There are a number of proposed and applied implementations of BLAST algorithm targeting FPGAs~\cite{oliver2005hyper}. 
+Almost all of the implementations are based on one of the two searching strategies, the Word Position Record Based Search (WPRBS) and Systolic arrays~\cite{guo2012systolic}. 
+The latter is a relatively new method and not a widely used for implementation of BLAST algorithm. 
 
-In WPRBS technique, only one word can be searched per clock, and consequently, only one hit can be found per clock \cite{guo2012open}. Timing issue is also caused by shortage in WPRBS searching capacity due to limited number of memory ports in FPGAs. Examples of such architecture are Mercury BLASTn \cite{buhler2007mercury} and Mitrion \cite{guo2012systolic}. In these two systems, storage tables are stored in the external memory SRAM that is attached to the FPGA, since the tables storing the words of long query sequences will require vast amount of space in internal memory RAM. Searching is performed by comparing one subject sequence from database to every word in the storage table simultaneously during one clock cycle \cite{guo2012systolic}. It is clear that performance of the system will be low: accessing external memory SRAM for getting subject sequence from database every time consumes significant amount of time. 
+In WPRBS technique, only one word can be searched per clock, and consequently, only one hit can be found per clock \cite{guo2012open}. 
+Timing issue is also caused by shortage in WPRBS searching capacity due to limited number of memory ports in FPGAs. 
+Examples of such architecture are Mercury BLASTn \cite{buhler2007mercury} and Mitrion \cite{guo2012systolic}. 
+In these two systems, storage tables are stored in the external memory SRAM that is attached to the FPGA, since the tables storing the words of long query sequences will require vast amount of space in internal memory RAM. 
+Searching is performed by comparing one subject sequence from database to every word in the storage table simultaneously during one clock cycle \cite{guo2012systolic}. 
+It is clear that performance of the system will be low: accessing external memory SRAM for getting subject sequence from database every time consumes significant amount of time. 
 
        
-By addressing the above timing issue, FPGA/FLASH \cite{lavenier2007reconfigurable} could achieve better results by minimizing the number of accesses to the external memory. This is done by enabling detection of several exact matches/hits simultaneously. In fact, it is due to index structure of the database: each word is associated with its position in the database and neighboring elements, hence, avoiding random accesses to database \cite{guo2012systolic}. However, huge space in the memory is needed to store index of the database as well as database itself. For database exponentially growing every year, this architecture will not be efficient in terms of storage capacity. In order to achieve better searching results, the architecture Multiengines BLASTn \cite{sotiriades2007design} was constructed. It is still based on WRPBS, but designed in such way that compares 64 subject sequences simultaneously due to its 64 identical computing units. As all of the above mentioned implementations based on WRPBS, this technique suffers from timing and memory limitations. 
+By addressing the above timing issue, FPGA/FLASH \cite{lavenier2007reconfigurable} could achieve better results by minimizing the number of accesses to the external memory. 
+This is done by enabling detection of several exact matches/hits simultaneously. 
+In fact, it is due to index structure of the database: each word is associated with its position in the database and neighboring elements, hence, avoiding random accesses to database \cite{guo2012systolic}. 
+However, large memory space is needed to store index of the database as well as database itself. 
+For database exponentially growing every year, this architecture will not be efficient in terms of storage capacity. 
+In order to achieve better searching results, the architecture Multiengines BLASTn \cite{sotiriades2007design} was proposed. 
+It is still based on WRPBS, but designed in such way that compares 64 subject sequences simultaneously due to its 64 identical computing units. 
+As all of the above mentioned implementations based on WRPBS, this technique suffers from timing and memory limitations. 
+Further these architectures are not available as open source implementations preventing their wider adoption.
 
+There are a few projects which are available as open source. 
+RC-BLAST~\cite{datta2009} and  systolic array-based architecture~\cite{guo2012open} are two such implementations.
+Although, RC-BLAST is stated to outperform a modern's day general purpose PC computer, this implementation is mostly dependent on the database length, query length and the number of hits identified. 
+For instance, this system's operation linearly depends on the size of the query, that is if query length increases, the FPGA system's performance rises. 
+Also, RC-BLAST's performance drops if there are many hits found, which increases the frequency of memory access.
 
-Most of the above mentioned architectures are not available as an open source project. This limits the capability to comprehend the implementation details thoroughly. However, there are a few projects available as an open source. RC-BLAST \cite{datta2009} and  systolic array-based architecture\cite{guo2012open} are examples of such projects. Although, RC-BLAST is stated to outperform a modern's day general purpose PC computer, this implementation is mostly dependent on the database length, query length and the number of hits identified. For instance, this system's operation linearly depends on the size of the query, that is if query length increases, the FPGA system's performance rises. Also, RC-BLAST's performance drops if there are many hits found, which causes more accesses to the memory to be made \cite{datta2009}.
+In another open source implementation \cite{guo2012open}, the author presents a systolic array-based FPGA parallel architecture for BLAST algorithm. 
+This architecture can detect more than one hit per clock cycle making it faster than WPRBS-based architectures. 
+The speed advantage of this architecture is obtained by merging two adjacent hits into one, and speed up the extension step. 
+This implementation manages resource utilization better than Tree-BLAST \cite{herbordt2006single}, performs scanning faster than Mercury BLASTn \cite{buhler2007mercury}, and deals with long sequences more effectively than Mercury BLASTp \cite{harris2007banded}. 
+However, the architecture focuses only on the first two steps of BLAST algorithm, finding the hit and ungapped expansion. 
 
-In another open source implementation \cite{guo2012open}, the author presents a systolic array-based FPGA parallel architecture for BLAST algorithm. In the provided architecture, there is so called the Multiple Hits Detection Module, which can find more than one hit per clock cycle. Thus, it makes this architecture faster than above-mentioned WPRBS-based architectures. The speed advantage of this architecture is obtained by merging two adjacent hits into one, and speed up the extension step \cite{guo2012open}. In \cite{guo2012open}, the author states that his proposed architecture manages resource utilization better than Tree-BLAST \cite{herbordt2006single}, performs scanning faster than Mercury BLASTn \cite{buhler2007mercury}, and deals with long sequences more effectively than Mercury BLASTp \cite{harris2007banded}. However, the architecture focuses only on the first two steps of BLAST algorithm: finding the hit and ungapped expansion. In order to detect multiple hits and perform merging two adjacent hits, \cite{guo2012open} added First In First Out (FIFO) buffers and Multiple Hits Detection Module, which resulted in an increase of the resource utilization \cite{guo2012open}.
-
-
+HBlast is a complete system-level implementation of BLAST targeting both on-premises as well as cloud-based acceleration.
+The implementation supports latest off-the-self FPGA boards as well as FPGA instances in the cloud.
+The support for cloud-based FPGA instances enables users dynamically scale the system based on their performance-cost constraints.
+The implementation can detect multiple word hits simultaneously due to the parallel implementation of the detection array.
+The query sequence is stored in the FPGA-internal memory and the database in the high-speed external DRAM memory.
+This minimizes the number of external memory accesses at the same time supports large database sequences.
