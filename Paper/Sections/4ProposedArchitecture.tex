@@ -4,10 +4,10 @@
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.9\columnwidth]{Figures/sysArch.pdf}
-\caption{Overall architecture of HBlast targeting on-premise FPGA implementation} \label{fig:sysArch}
+\caption{Overall architecture of HBLast targeting on-premise FPGA implementation} \label{fig:sysArch}
 \end{figure}
 
-The overall architecture of HBlast library targeting on-premises implementation is as depicted in Fig.~\ref{fig:sysArch}.
+The overall architecture of HBLast library targeting on-premises implementation is as depicted in Fig.~\ref{fig:sysArch}.
 It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
 This board supports a PCIe x8 Gen.3 interface which theoretically supports up to 7.88 GB/s/direction bandwidth.
 It has 8GB external DRAM, supporting up to 933MHz clock frequency.
@@ -35,24 +35,24 @@ The interface operates at 200MHz with 512-bit interface providing a maximum of 1
 The throughput of the memory interface is very critical to the overall performance since the database sequences are continuously read from the external memory for comparing with the query sequence.
 Multiple levels of pipelining is implemented to support the required memory clock performance.
 
-\subsection{BHlast Core}
+\subsection{HBLast Core}
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{Figures/BlastMachine.pdf}
-\caption{Detailed architecture of the HBlast core module showing the Hit and Expansion submodule and their interconnection} \label{fig:blastArch}
+\caption{Detailed architecture of the HBLast core module showing the Hit and Expansion submodule and their interconnection} \label{fig:blastArch}
 \end{figure}
 
 This module implements the core BLAST algorithm discussed in Section~\ref{sec:blast}.
 For the current implementation, the maximum query size supported is 512bits~(256 bases) with up to 4GB database. 
 This can be extended to larger size by instantiating more number of basic compute units.
 The database is stored in the external DRAM memory and the query sequence is stored in the internal \textit{queryReg} register.
-The two main sub-modules of the HBlast core are the \textit{Hit} and \textit{Expansion} modules as shown in Fig.~\ref{fig:blastArch}. As their names state, these blocks are responsible for tasks like finding hit (match), expanding the sequence and linking blocks. 
+The two main sub-modules of the HBLast core are the \textit{Hit} and \textit{Expansion} modules as shown in Fig.~\ref{fig:blastArch}. As their names state, these blocks are responsible for tasks like finding hit (match), expanding the sequence and linking blocks. 
 
 For the nucleotides, W-mer size is 11 letters~\cite{kasap2008design}, so by \textit{Eq.\ref{eq1}} there are 246 W-mers in 256-letter query. 
 Each of them must be compared with each W-mer of the database.  
 Comparison between one database and one query W-mer at a time is not effective in terms of latency. 
-In HBlast architecture this operation is parallelized by introducing 246 comparators (one for each query W-mer). 
+In HBLast architecture this operation is parallelized by introducing 246 comparators (one for each query W-mer). 
 All comparators have common 22-bit (11-letter) database W-mer fetched from external memory. 
 This input is controlled by the \textit{Database Shift Register}, which performs a 2-bit shift operation after every clock cycle. 
 The expansion module will be activated if output of any of these comparators is high, indicating a valid match has been found between the database and the query. 
@@ -145,8 +145,8 @@ The DRAM interface from FPGA is 64-bit wide hence to write 512-bit sequence, 8 w
 \caption{FSM diagram for bridge} \label{fig:bridge}
 \end{figure}
 
-\subsection{HBlast Cloud Architecture}
-Fig.~\ref{fig:awsArch} depicts the architecture of the HBlast module when implemented on an AWS-EC2 F1 FPGA instance~\cite{aws2018}.
+\subsection{HBLast Cloud Architecture}
+Fig.~\ref{fig:awsArch} depicts the architecture of the HBLast module when implemented on an AWS-EC2 F1 FPGA instance~\cite{aws2018}.
 The F1 instance is a Xilinx Ultrascale+ FPGA and supports PCIe Gen3 x16 interface to the host computer.
 Thus, it supports twice the bandwidth between the host computer and FPGA compared to VC709 implementation.
 Each instance has 64GB external DRAM (DDR4) memory support also.
@@ -157,7 +157,7 @@ This eliminates the need for the Dyract IP and the DRAM controller when targetin
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.9\columnwidth]{Figures/AwsArch.pdf}
-\caption{HBlast architecture when targeting Amazon EC2 F1 FPGA instance} \label{fig:awsArch}
+\caption{HBLast architecture when targeting Amazon EC2 F1 FPGA instance} \label{fig:awsArch}
 \end{figure}
 
 

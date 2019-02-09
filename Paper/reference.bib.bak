@@ -220,8 +220,7 @@ author        = {Lars Wienbrandt and Stefan Baumgart and Jost Bissel and Florian
 }
 
 @Electronic{hblastGit,
-  title = {{HBLast Git repository}},
-  url   = {https://github.com/MarzhanBekbolat/HBlast},
+  url = {https://github.com/MarzhanBekbolat/HBlast},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

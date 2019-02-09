@@ -44,7 +44,7 @@ The speed advantage of this architecture is obtained by merging two adjacent hit
 This implementation manages resource utilization better than Tree-BLAST \cite{herbordt2006single}, performs scanning faster than Mercury BLASTn \cite{buhler2007mercury}, and deals with long sequences more effectively than Mercury BLASTp \cite{harris2007banded}. 
 However, the architecture focuses only on the first two steps of BLAST algorithm, finding the hit and ungapped expansion. 
 
-HBlast is a complete system-level implementation of BLAST targeting both on-premises as well as cloud-based acceleration.
+HBLast is a complete system-level implementation of BLAST targeting both on-premises as well as cloud-based acceleration.
 The implementation supports latest off-the-self FPGA boards as well as FPGA instances in the cloud.
 The support for cloud-based FPGA instances enables users dynamically scale the system based on their performance-cost constraints.
 The implementation can detect multiple word hits simultaneously due to the parallel implementation of the detection array.

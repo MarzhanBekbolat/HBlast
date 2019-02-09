@@ -1,9 +1,12 @@
 \section{Conclusion and Future Work}
 \label{sec:concl}
 
-In this paper, we propose the FPGA-based implementation of BLAST algorithm called HBlast. The proposed architecture utilizes the parallel search processing, the efficiency of which is determined in the analysis part. 
+In this work, we proposed an FPGA-based hardware accelerator targeting the BLAST algorithm. 
+The proposed architecture supports both on-premises as well as cloud-based implementation of the algorithm.
+Due to its parallel architecture, high-speed interfaces and lite-weight nature, the performance in terms of resource utilization and latency are much better than the state of the art.
 
-
-Indeed, this project aims to be one of the several FPGA-based implementations of search algorithms. For the time being, the proposed architecture is available as open source and can be accessed by following source \cite{HBlast2019}. The larger project will constitute a library of hardware accelerators targeting cloud-based FPGA instances. The accessibility of the accelerators in the public domain will enable interested organizations to achieve hardware acceleration through cloud-based infrastructures such as Amazon AWS FPGA instances. In fact, this will be effective and suitable for research centres with limited computing facilities. Moreover, by having a communication infrastructure for interfacing the accelerators with standard PCIe and DRAM interfaces, accelerators, such as the proposed one in this paper, could be also used in personal FPGAs.  
-
-
+In the future we intend to support more bioinformatic algorithms on reconfigurable platforms.
+One of the immediate goals is to provide support for amino-acid sequence search.
+The on-premises implementation source-code is available as an open-source IP core through our git repository~\cite{hblastGit}.
+The AWS F1 implementation will be made available through the Amazon marketplace.
+We believe that availability of open-source cloud-based bioinformatic accelerators will enable small research centers and hospitals to exploit the benefits of cloud-based hardware accelerators and get faster results within their time and cost constraints.
