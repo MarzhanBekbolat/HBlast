@@ -7,7 +7,7 @@
 \caption{Overall architecture of HBlast targeting on-premise FPGA implementation} \label{fig:sysArch}
 \end{figure}
 
-The overall architecture of HBlast library targeting on-premise implementation is as depicted in Fig.~\ref{fig:sysArch}.
+The overall architecture of HBlast library targeting on-premises implementation is as depicted in Fig.~\ref{fig:sysArch}.
 It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
 This board supports a PCIe x8 Gen.3 interface which theoretically supports up to 7.88 GB/s/direction bandwidth.
 It has 8GB external DRAM, supporting up to 933MHz clock frequency.
@@ -17,20 +17,20 @@ Details of each sub-module is discussed in the subsequent sections.
 Our current implementation targets only DNA sequence searching which could be augmented with support for protein searching in the future.
 Since there are only 4 types of nucleobases encountered in DNA sequences (adenine (A), guanine (G) cytosine (C), and thymine (T)), only two bits are used to represent each base.
 This considerably reduces the memory requirement for storing the database compared to traditional character-based storage since each character takes one byte of data.
-The entire database is initially stored in the external DRAM memory of the FPGA-board and the query sequences are stored in the internal memory of the FPGA.
+The entire database is initially stored in the external DRAM memory of the FPGA-board and the query sequences are stored in the FPGA internal memory.
 
 \subsection{PCIe Controller}
-We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA with the host computer~\cite{Vipin2014}.
+We use our previously developed open-source FPGA PCIe controller called Dyract to interface with the host computer~\cite{Vipin2014}.
 The PCIe interface is used to send the database and query strings to the FPGA as well as to receive back the HSPs and the corresponding scores.
 This interface can provide up to 6.5 GB/s throughput, nearly saturating the available PCIe bandwidth.
 The PCIe controller is interfaced with both the memory controller as well as the BLast core.
 Depending upon the stream type, data is sent either to the external DRAM or the internal registers of BLast core through a bridge logic.
 
-Since the database needs to be stored only once in the external DRAM, the PCIe bandwidth is not critical to the overall performance of the system. Hence for systems which do not support PCIe, this interface could be replaced with low-bandwidth interfaces such as Ethernet or even serial.
+%Since the database needs to be stored only once in the external DRAM, the PCIe bandwidth is not critical to the overall performance of the system. Hence for systems which do not support PCIe, this interface could be replaced with low-bandwidth interfaces such as Ethernet or even serial.
 
 \subsection{DRAM Controller}
 The DRAM controller internally uses Xilinx memory interface generator (MIG) IP core~\cite{mig2018}. 
-Present implementation instantiates a single MIG controller thus supporting up to 4GB external memory.
+Present implementation instantiates a single MIG controller thus supporting up to 4GB external memory on VC709.
 The interface operates at 200MHz with 512-bit interface providing a maximum of 12.5 GB/s throughput.
 The throughput of the memory interface is very critical to the overall performance since the database sequences are continuously read from the external memory for comparing with the query sequence.
 Multiple levels of pipelining is implemented to support the required memory clock performance.
@@ -114,7 +114,7 @@ The module Memory Interface is a control unit that interacts with modules Expans
 It is an FSM of 7 states. The main functions of the module are following:
 \begin{itemize}
 \item The module takes addresses from the expansion or hit modules and sends the control signals to the DRAM controller.
-\item Module receives and sends control signals. For instance, when it gets signal which indicates absence or expiration in matches between query and 22-bit W-mer of the database from Hit module, it sends signal to shift the current piece of the database to the module.
+\item When it gets signal which indicates the absence or expiration in matches between query and 22-bit W-mer of the database from Hit module, it sends signal to shift the current piece of the database to the module.
 \item The module arbitrates the memory access between the Expansion and Hit modules. 
 \end{itemize}
 
@@ -129,11 +129,13 @@ It is an FSM of 7 states. The main functions of the module are following:
 The Bridge module implements the data width matching between the PCIe interface and the Memory Interface and arbitrates the memory access between the PCIe core and the BLast core. 
 It consists of four states, refer to Fig.~\ref{fig:bridge}:
 \begin{enumerate}
-\item \textbf{Idle}. Depending on whether input signal is write or read, the state changes to Wait\_wr\_cmd and Wait\_rd respectively. Write signal comes from PCIe when it wants to write query data and database into DDR SDRAM. While, read signal comes from two main modules (Hit and Expand) of the architecture when it wants to take data from DDR.
+\item \textbf{Idle}. Depending on whether input signal is write or read, the state changes to Wait\_wr\_cmd and Wait\_rd respectively. 
+Write signal comes from PCIe when it wants to write query data and database into DRAM. 
+While, read signal comes from two main modules (Hit and Expand) of the architecture when it wants to take data from DDR.
 \item \textbf{Wait\_wr\_cmd}. This state waits for the acknowledgement from DDR, as it is received, input data is sent to DDR. Then, state changes to the next Wait\_wr state.
 \item \textbf{Wait\_wr}. The FSM state waits for write\_ready acknowledgment, and then increments the write address by 8.
 The DRAM interface from FPGA is 64-bit wide hence to write 512-bit sequence, 8 write operations are required. 
-\item \textbf{Wait\_rd}. After receiving acknowledgment from DDR that DDR is ready, it reads data 8 times and each time increments address by 8 for the same reason as explained above. 
+\item \textbf{Wait\_rd}. After receiving read ready signal from DRAM controller, it reads data 8 times and each time increments address by 8 for the same reason as explained above. 
 \end{enumerate}
 
 
@@ -143,6 +145,14 @@ The DRAM interface from FPGA is 64-bit wide hence to write 512-bit sequence, 8 w
 \caption{FSM diagram for bridge} \label{fig:bridge}
 \end{figure}
 
+\subsection{HBlast Cloud Architecture}
+Fig.~\ref{fig:awsArch} depicts the architecture of the HBlast module when implemented on an AWS-EC2 F1 FPGA instance~\cite{aws2018}.
+The F1 instance is a Xilinx Ultrascale+ FPGA and supports PCIe Gen3 x16 interface to the host computer.
+Thus, it supports twice the bandwidth between the host computer and FPGA compared to VC709 implementation.
+Each instance has 64GB external DRAM (DDR4) memory support also.
+Amazon provides a \emph{shell} infrastructure for the FPGA, which manages the communication between the FPGA and the host machine as well as between the FPGA and the external DRAM memory.
+This eliminates the need for the Dyract IP and the DRAM controller when targeting the design for the cloud infrastructure.
+
 
 \begin{figure}[t!]
 \centering
@@ -150,12 +160,6 @@ The DRAM interface from FPGA is 64-bit wide hence to write 512-bit sequence, 8 w
 \caption{HBlast architecture when targeting Amazon EC2 F1 FPGA instance} \label{fig:awsArch}
 \end{figure}
 
-\subsection{HBlast Cloud Architecture}
-Fig.~\ref{fig:awsArch} depicts the architecture of the HBlast module when implemented on an AWS-EC2 F1 FPGA instance~\cite{aws2018}.
-The F1 instance is a Xilinx Ultrascale+ FPGA and supports PCIe Gen3 x16 interface to the host computer.
-Each instance has 64GB external DRAM (DDR4) memory support also.
-Amazon provides a \emph{shell} infrastructure for the FPGA, which manages the communication between the FPGA and the host machine as well as between the FPGA and the external DRAM memory.
-This eliminates the need for the Dyract IP and the DRAM controller when targeting the design for the cloud infrastructure.
 
 The bridge logic and the HBLast core are implemented in the \emph{custom logic~(CL)} portion for the F1 instance.
 The bridge logic is interfaced with PCIe master and slave interfaces of the shell as well as one of the master ports of the shell DRAM interface.
