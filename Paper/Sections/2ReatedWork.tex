@@ -1,4 +1,4 @@
-\section{Background and Related Work}
+\section{Related Works}
 \label{sec:background}
 
 
@@ -28,7 +28,7 @@ However, large memory space is needed to store index of the database as well as 
 For database exponentially growing every year, this architecture will not be efficient in terms of storage capacity. 
 In order to achieve better searching results, the architecture Multiengines BLASTn \cite{sotiriades2007design} was proposed. 
 It is still based on WRPBS, but designed in such way that compares 64 subject sequences simultaneously due to its 64 identical computing units. 
-As all of the above mentioned implementations based on WRPBS, this technique suffers from timing and memory limitations. 
+As all of the above-mentioned implementations based on WRPBS, they suffer from timing and memory limitations. 
 Further these architectures are not available as open source implementations preventing their wider adoption.
 
 There are a few projects which are available as open source. 
@@ -39,7 +39,7 @@ Also, RC-BLAST's performance drops if there are many hits found, which increases
 
 In another open source implementation \cite{guo2012open}, the author presents a systolic array-based FPGA parallel architecture for BLAST algorithm. 
 This architecture can detect more than one hit per clock cycle making it faster than WPRBS-based architectures. 
-The speed advantage of this architecture is obtained by merging two adjacent hits into one, and speed up the extension step. 
+The speed advantage of this architecture is obtained by merging two adjacent hits into one and speed up the extension step. 
 This implementation manages resource utilization better than Tree-BLAST \cite{herbordt2006single}, performs scanning faster than Mercury BLASTn \cite{buhler2007mercury}, and deals with long sequences more effectively than Mercury BLASTp \cite{harris2007banded}. 
 However, the architecture focuses only on the first two steps of BLAST algorithm, finding the hit and ungapped expansion. 
 

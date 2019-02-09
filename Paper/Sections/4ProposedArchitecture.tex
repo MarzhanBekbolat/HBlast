@@ -9,20 +9,20 @@
 
 The overall architecture of HBlast library targeting on-premise implementation is as depicted in Fig.~\ref{fig:sysArch}.
 It is implemented on an off-the-shelf vendor supported FPGA development board (Xilinx~VC709).
-This board supports a PCIe x8 Gen.3 interface which theoretically supports upto 7.88 GB/s/direction bandwidth.
-It has 8GB external DRAM, supporting upto 933MHz clock frequency.
+This board supports a PCIe x8 Gen.3 interface which theoretically supports up to 7.88 GB/s/direction bandwidth.
+It has 8GB external DRAM, supporting up to 933MHz clock frequency.
 The implementation consists of an IP core (Dyract) to interface with a host computer, a DRAM controller for interfacing with the external DDR memory and the module implementing the core BLAST algorithm.
 Details of each sub-module is discussed in the subsequent sections.
 
 Our current implementation targets only DNA sequence searching which could be augmented with support for protein searching in the future.
 Since there are only 4 types of nucleobases encountered in DNA sequences (adenine (A), guanine (G) cytosine (C), and thymine (T)), only two bits are used to represent each base.
-This considerably reduces the memory requirement for storing the database compared to traditional character based storage since each character takes one byte of data.
+This considerably reduces the memory requirement for storing the database compared to traditional character-based storage since each character takes one byte of data.
 The entire database is initially stored in the external DRAM memory of the FPGA-board and the query sequences are stored in the internal memory of the FPGA.
 
 \subsection{PCIe Controller}
 We use our previously developed open-source FPGA PCIe controller called Dyract to interface the FPGA with the host computer~\cite{Vipin2014}.
-The PCIe interface is used to send the database and querry strings to the FPGA as well as to receive back the HSPs and the corresponding scores.
-This interface is able to provide upto 6.5 GB/s throughput, nearly saturating the available PCIe bandwidth.
+The PCIe interface is used to send the database and query strings to the FPGA as well as to receive back the HSPs and the corresponding scores.
+This interface can provide up to 6.5 GB/s throughput, nearly saturating the available PCIe bandwidth.
 The PCIe controller is interfaced with both the memory controller as well as the BLast core.
 Depending upon the stream type, data is sent either to the external DRAM or the internal registers of BLast core through a bridge logic.
 
@@ -30,7 +30,7 @@ Since the database needs to be stored only once in the external DRAM, the PCIe b
 
 \subsection{DRAM Controller}
 The DRAM controller internally uses Xilinx memory interface generator (MIG) IP core~\cite{mig2018}. 
-Present implementation instantiates a single MIG controller thus supporting only 4GB external memory.
+Present implementation instantiates a single MIG controller thus supporting up to 4GB external memory.
 The interface operates at 200MHz with 512-bit interface providing a maximum of 12.5 GB/s throughput.
 The throughput of the memory interface is very critical to the overall performance since the database sequences are continuously read from the external memory for comparing with the query sequence.
 Multiple levels of pipelining is implemented to support the required memory clock performance.
@@ -44,7 +44,7 @@ Multiple levels of pipelining is implemented to support the required memory cloc
 \end{figure}
 
 This module implements the core BLAST algorithm discussed in Section~\ref{sec:blast}.
-For the current implementation, the maximum query size supported is 512bits~(256 bases) with upto 4GB database. 
+For the current implementation, the maximum query size supported is 512bits~(256 bases) with up to 4GB database. 
 This can be extended to larger size by instantiating more number of basic compute units.
 The database is stored in the external DRAM memory and the query sequence is stored in the internal \textit{queryReg} register.
 The two main sub-modules of the HBlast core are the \textit{Hit} and \textit{Expansion} modules as shown in Fig.~\ref{fig:blastArch}. As their names state, these blocks are responsible for tasks like finding hit (match), expanding the sequence and linking blocks. 
@@ -62,10 +62,10 @@ A single expansion block is used to restrict the FPGA resource utilization and t
 Once a valid match is found, the hit module sends information regarding the location of the match in the query and the number of performed shift operations to the expand module. 
   
 \subsection{Hit}
-Hit module compares W-mers from the database with W-mers in query in parallel to find exact matches. 
+The hit module compares W-mers from the database with W-mers in query in parallel to find exact matches. 
 The module implements a finite state machine (FSM) with two states as shown in Fig.\ref{fig:hitFSM}. 
 In the Idle state, the module takes a 22-bit sequence from the database and compares each W-mer with the corresponding W-mers in the query sequence via 246 comparators. 
-Due to the parallel architecture, the comparisons happen in parallel which significantly improves the latency. 
+Due to the parallel architecture, the comparisons happen simultaneously which significantly improves the latency. 
 If at least one exact match is detected, the signal \textit{hit} is activated and the process passes to the next state, (\textit{HitLow}).
 It stays in this state while expansion process is being performed. When expansion is over, the FSM goes back to the \textit{Idle state} and verifies if there are other matches of the W-mers within the query. 
 If there is a match again, the expansion process will be repeated, if there is no more match found, the loaded 512 bits of database is shifted by 2 bits and next 22 bits of sequence in database are compared with the query. 
@@ -98,7 +98,8 @@ If next 2 bits are matched 5 is added to the HSP score, otherwise 4 points are d
 Threshold value is chosen to be 200 bits, meaning that the sequence can be expanded to both sides by 200 bits each. 
 Accordingly, maximum HSP can be 1055. 
 The threshold value is set to 200 since the maximum query sequence size is 512-bits.
-The expansion is performed with all the matching W-mers of the query with the database. And as the final output the 5 sequences with the highest score, that is 5 most matching sequences of the query to database, is obtained with their positions as start and end locations in the database. However, the operation stops when the exact matching sequence with highest score of 1055 is detected, since there will be no need in other matchings.
+The expansion is performed with all the matching W-mers of the query with the database. And as the final output the 5 sequences with the highest score, that is 5 most matching sequences of the query to database, is obtained with their positions as start and end locations in the database. However, the operation stops when the exact matching sequence with highest score of 1055 is detected.
+There is no need of further matches since the that is the maximum possible score for an HSP.
        
 
 \begin{figure}[t!]
@@ -117,11 +118,11 @@ It is an FSM of 7 states. The main functions of the module are following:
 \item The module arbitrates the memory access between the Expansion and Hit modules. 
 \end{itemize}
 
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{Figures/FSM_Mem_New.pdf}
-\caption{FSM diagram for Memory Interface} \label{fig:MemInt}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=\columnwidth]{Figures/FSM_Mem_New.pdf}
+%\caption{FSM diagram for Memory Interface} \label{fig:MemInt}
+%\end{figure}
 
 
 \subsection{Bridge}
@@ -146,5 +147,17 @@ The DRAM interface from FPGA is 64-bit wide hence to write 512-bit sequence, 8 w
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.9\columnwidth]{Figures/AwsArch.pdf}
-\caption{HBlast architecture in AWS} \label{fig:awsArch}
+\caption{HBlast architecture when targeting Amazon EC2 F1 FPGA instance} \label{fig:awsArch}
 \end{figure}
+
+\subsection{HBlast Cloud Architecture}
+Fig.~\ref{fig:awsArch} depicts the architecture of the HBlast module when implemented on an AWS-EC2 F1 FPGA instance~\cite{aws2018}.
+The F1 instance is a Xilinx Ultrascale+ FPGA and supports PCIe Gen3 x16 interface to the host computer.
+Each instance has 64GB external DRAM (DDR4) memory support also.
+Amazon provides a \emph{shell} infrastructure for the FPGA, which manages the communication between the FPGA and the host machine as well as between the FPGA and the external DRAM memory.
+This eliminates the need for the Dyract IP and the DRAM controller when targeting the design for the cloud infrastructure.
+
+The bridge logic and the HBLast core are implemented in the \emph{custom logic~(CL)} portion for the F1 instance.
+The bridge logic is interfaced with PCIe master and slave interfaces of the shell as well as one of the master ports of the shell DRAM interface.
+Similar to the bridge logic of the on-premise implementation, this logic routes the data coming from the host server either to the external DRAM or to the internal memory of the HBLast core depending on the data stream type (database or query).  
+The HBLast module instantiates the same modules as discussed before and runs at 200MHz clock frequency provided by the shell logic.

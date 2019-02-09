@@ -11,16 +11,16 @@
     \centering
     \includegraphics[width=0.8\columnwidth]{Figures/Algorithm2.pdf}
 	\end{subfigure}
-	\caption{(a)~Finding W-mers from a query by creating substrings of size 3, (b)~Example of exact match between a querry and a database sequence}
+	\caption{(a)~Finding W-mers from a query by creating substrings of size 3, (b)~Example of exact match between a query and a database sequence}
 	\label{fig:step12}
 \end{figure}
 
 BLAST algorithm is used to search for similar parts of sequences in a database and a query~\cite{Stephen1990}. 
-Both the database and querry sequences are represented using strings of English alphabet with each letter representing a nucleobase such as Adenine, Thymine etc.
+Both the database and query sequences are represented using strings of English alphabet with each letter representing a nucleobase such as Adenine, Thymine etc.
 There are multiple implementations of BLAST based on the type of data they process. 
-DNA sequence search uses nucleotides with 4-letter  representation and protein search uses amino acids with 20-letter representation. 
-The input to BLAST are two sequences; a database, which consists of a large amount of classified data such as known viral DNAs, and a query, such as a piece of unknown DNA, which has to be compared with the database and find the similar parts. 
-The output of the algorithm are the degree~(score) of similarity of the aligned parts and their corresponding location in the sequences. 
+DNA sequence search uses nucleotides with 4-letter  representation and protein search uses amino-acids with 20-letter representation. 
+The inputs to BLAST are two sequences; a database, which consists of a large amount of classified data such as known viral DNAs, and a query, such as a piece of unknown DNA, which has to be compared with the database and find the similar parts. 
+The outputs from the algorithm are the degree~(score) of similarity of the aligned parts and their corresponding location in the sequences. 
 Each matched pair between the database and the query is called a High Score Pair~(HSP) and is of extreme importance for further biological computations. 
 BLAST algorithm consists of 3 primary steps:
 \begin{itemize}
@@ -63,6 +63,6 @@ The scoring technique of the algorithm is based on the Point Accepted Mutations~
 However, due to the complexity of this technique, a simpler and biologically acceptable scoring method is generally used. 
 In the expansion stage, each new match will results in addition of 5 points to the score and any mismatch will lead to reduction of 4 from the score as depicted in Fig.\ref{fig:step3}.
 The expansion ceases when the score calculated after an expansion becomes less than the score before expansion.
-The substrings with maximum score are selected and are called HSPs.
-The HSPs and the correponding score are reported as the final output of the algorithm.
+The sub-strings with maximum scores are selected and are called HSPs.
+The HSPs and the corresponding score are reported as the final output of the algorithm.
 
