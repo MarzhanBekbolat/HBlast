@@ -26,13 +26,13 @@ We propose an FPGA-based implementation of BLAST algorithm called HBlast, where 
 This work is part of a larger project, which aims to develop a library of hardware accelerators targeting cloud-based FPGA instances.
 The accelerators will be provided in the public domain, which enables hospitals and research centers with limited computing facilities to achieve hardware acceleration by hosting these accelerators on the cloud infrastructure such as Amazon AWS FPGA instances~\cite{aws2018}.
 Since the cloud billing model is based on usage and instance types, organizations can obtain their solution faster within the budget constraints.
-Accelerators could be also used in on-premises FPGA instances since a communication infrastructure for interfacing the accelerators with standard PCIe and DRAM interfaces is also provided.
+Accelerators could be also used in on-premises~(private) FPGA instances since a communication infrastructure for interfacing the accelerators with standard PCIe and DRAM interfaces is also provided.
 
 The main contributions of this work are
 \begin{itemize}
-\item Detailed architecture description of the FPGA-based implementation of the BLAST algorithm
-\item An open-source implementation of the proposed algorithm targeting Xilinx Virtex-7 FPGA
-\item Characterization of the proposed platform in terms of FPGA resource consumption and performance
+\item Detailed architecture description of the FPGA-based implementation of the BLAST algorithm.
+\item An open-source implementation of the proposed algorithm targeting the Xilinx Virtex-7 and Amazon EC2 F1 FPGA instances.
+\item Characterization of the proposed platform in terms of FPGA resource consumption and performance.
 \end{itemize}
 
-The rest of this paper is organized as, Section 2 discussed the related work, Section 3 discusses the BLAST algorithm, Section 4 presents the proposed architecture and the implementation details, Section 5 provides the results of performance analysis, and Section 6 concludes the paper.
+The rest of this paper is organized as, Section 2 discusses the related work, Section 3 discusses the details of BLAST algorithm, Section 4 presents the proposed architecture and the implementation details, Section 5 provides the results of performance analysis, and Section 6 concludes the paper.
