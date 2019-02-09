@@ -1,6 +1,12 @@
 \begin{abstract}
 
-A numerous FPGA-based designs were presented for accelerating similarity search algorithms in Bioinformatics. Those design were built according to many algorithms, however, the BLAST algorithm is the most widely used algorithm transferred to reconfigurable hardware. This paper presents the design and implementation of the FPGA-based core for BLAST algorithm with parallel search for match between sequences. This results in a high performance and effective FPGA implementation, which outperforms the equivalent software implementation. The new architecture and detailed performance results are presented in this paper.
+Biological sequence alignment algorithms work by identifying the degree of similarity between a newly discovered biological sequence with already known sequences.
+Exponential growth in the database and query sizes make pure software-based solutions inefficient in finding a solution within the time constraints.
+This calls for hardware acceleration-based solutions such as those based on field programmable gate arrays (FPGAs). 
+In this work we present the design and implementation of the popular BLAST algorithm for nucleotide sequence alignment, called HBLast, targeting FPGA-based reconfigurable platforms.
+The implementation is supported by both on-premise (private) FPGA instances as well as cloud-based solutions.
+Results show that the platform can achieve high-performance which keeping low resource consumption.
+The platform is available as an open-source, enabling other researchers and small research centers to achieve cloud-based genomic sequence acceleration.
 \end{abstract}
 
 \begin{IEEEkeywords}
